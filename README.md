@@ -3,6 +3,7 @@ Projet
 Librairies externes :
 ---------------------
 * http://phpqrcode.sourceforge.net/
+	désiper dans le dossier lib
 
 
 
