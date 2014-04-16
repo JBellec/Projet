@@ -4,3 +4,13 @@ form
 	min-width: 50px;
 	
 }
+.container
+{
+	max-width: 500px;
+	min-width: 50px;
+	
+}
+body {
+	padding-top : 150px;
+	
+}
