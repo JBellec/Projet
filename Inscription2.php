@@ -63,7 +63,7 @@
 		<div id="contenu"><div class="entête">  
 
     
-    <form name="inscritpion" method="post" action="InscritpiontestPHP.php" role="form">
+    <form name="inscritpion" method="post" action="formulaire.php" role="form">
        <div class="form-group">
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" placeholder="Enter email">
@@ -71,27 +71,37 @@
 
         <div class="form-group">
           <label for="pass">Password</label>
-          <input type="password" class="form-control" id="pass" placeholder="Password">
+          <input type="password" class="form-control" name="password" id="pass" placeholder="Password">
          </div>
 
+         <div class="form-group">
+          <label> Confirm you password: </label>
+          <input type="password" class="form-control" name="passe2" id="confirmpassword" placeholder="Enter your password again">
+        </div>
+
+
+          <div class="form-group">
+          <label for="pseudo">Pseudo</label>
+          <input type="text" class="form-control" id="pseudo" placeholder="Enter your pseudo">
+       </div>
+
         <div class="form-group">
-          <label for="nom">Nom</label>
-          <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+          <label for="nom">Name</label>
+          <input type="text" class="form-control" id="nom" placeholder="Enter your name">
          </div>
   
        </br>
 
         <div class="form-group">
-           <label for="prenom">Prenom</label>
-           <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prenom">
+           <label for="prenom">Lastname</label>
+           <input type="text" class="form-control" id="prenom" placeholder="Enter your lastname">
         </div>
   
         </br>
   
-        <div class="form-group">
-          <label for="pseudo">Pseudo</label>
-          <input type="text" class="form-control" id="pseudo" placeholder="Entrez votre pseudo">
-       </div>
+        
+
+
 
        </br>
   
