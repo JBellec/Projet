@@ -27,7 +27,7 @@
 		while ($donnees = $reponse->fetch()){
 			try 
 			{
-				 echo '<img src="generate.php?id='.$donnees['lien'].'" />'; 
+				 echo '<img src="qr/generate.php?txt='.'http://zoski.fr/'.$donnees['lien'].'" />'; 
 			}
 			catch (Exception $e)
 			{

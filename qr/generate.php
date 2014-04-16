@@ -1,10 +1,8 @@
 <?php
-	include 'lib/phpqrcode/qrlib.php';
+	include '../lib/phpqrcode/qrlib.php';
 	include 'includes/mysql.php';
 	
-	$input = $_GET['id'];	//txt à générer
-	
-	die $id;
+	$input = $_GET['txt'];	//txt à générer
 	
 	ob_start("callback");
 	
