@@ -15,7 +15,8 @@
 
     <!-- Custom styles for this template -->
    
-     <link href="css/modele07.css" rel="stylesheet">
+     <link href="css/projet.css" rel="stylesheet">
+	 <link href="css/inscription.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
