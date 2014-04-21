@@ -15,8 +15,7 @@
 
     <!-- Custom styles for this template -->
    
-     <link href="css/projet.css" rel="stylesheet">
-	 <link href="css/inscription.css" rel="stylesheet">
+     <link href="css/inscription.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,59 +56,55 @@
 
 		<div id="navigation"><ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="Inscription.html">Inscription</a></li>
+            <li><a href="Inscription2.php">Inscription</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul></div>
 		<div id="contenu"><div class="entête">  
 
     
-    <form name="inscritpion" method="post" action="formulaire.php" role="form">
+    <form method="post" action="inscriptionBDD.php">
        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <label for="email">Enter email</label>
+          <input type="email" class="form-control"  name="email" id ="email" placeholder="Enter email">
         </div>
 
-        <div class="form-group">
-          <label for="pass">Password</label>
-          <input type="password" class="form-control" name="password" id="pass" placeholder="Password">
-         </div>
-
-         <div class="form-group">
-          <label> Confirm you password: </label>
-          <input type="password" class="form-control" name="passe2" id="confirmpassword" placeholder="Enter your password again">
-        </div>
-
-
-          <div class="form-group">
+		<div class="form-group">
           <label for="pseudo">Pseudo</label>
-          <input type="text" class="form-control" id="pseudo" placeholder="Enter your pseudo">
+          <input type="text" class="form-control" name="pseudo"  id="pseudo" placeholder="Entrez votre pseudo">
        </div>
-
+		
         <div class="form-group">
-          <label for="nom">Name</label>
-          <input type="text" class="form-control" id="nom" placeholder="Enter your name">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom">
          </div>
   
-       </br>
 
         <div class="form-group">
-           <label for="prenom">Lastname</label>
-           <input type="text" class="form-control" id="prenom" placeholder="Enter your lastname">
+           <label for="prenom">Prenom</label>
+           <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrez votre prenom">
         </div>
-  
-        </br>
   
         
-
-
+		
+		<div class="form-group">
+          <label for="pass">Password</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+         </div>
+		 
+		 <div class="form-group">
+          <label for="pass">Confirm Password</label>
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password">
+         </div>
+        
 
        </br>
   
-       <div
-          <button type="submit" class="btn btn-success">Valider</button>
+       <div>
+          <input type="submit" class="btn btn-success"></input>
       </div>
 
     </form>
+	
    </div>
 	 </div>
   </div>
