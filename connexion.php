@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/projet.css" rel="stylesheet">
+    <link href="css/css_connexion.css" rel="stylesheet">
      
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="Inscription.html">Inscription</a></li>
+            <li><a href="Inscription2.php">Inscription</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -53,7 +53,7 @@
 
     <div class="container">
 
-      <form class="form-signin" method="post" action="connexionBDD.php">
+      <form class="form-signin" method ="post" action="login.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required autofocus>
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
@@ -61,7 +61,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='Inscription2.html'">Register</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='Inscription2.php'">Sign up</button>
 
     </div> <!-- /container -->
 
