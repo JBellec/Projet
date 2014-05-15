@@ -26,7 +26,7 @@ $name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
 $lastname = mysql_real_escape_string(htmlspecialchars($_POST['lastname']));
 
 
-// Je vais crypter le mot de passe.
+// Je vais chiffrer le mot de passe.
 $password = sha1($password);
 
 mysql_query("INSERT INTO projet1a VALUES('', '$pseudo', '$password', '$email','$name','$lastname')");

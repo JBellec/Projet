@@ -7,7 +7,6 @@
 	*/
 	
 	include '../lib/phpqrcode/qrlib.php';
-	include 'includes/mysql.php';	
 	
 	$toQrCode = $_GET['txt'];	//Chaine de caractère donné en paramètre truc.php?txt='fghjk'
 	
