@@ -16,7 +16,7 @@
                     <!--<li class="active"><a href="#">Link</a></li>-->
                     
                     <li><a href="qrxid.php">QR Xid</a></li>
-                    <!-- Menu déroulant pour les admin à faire includes/navbar_admin.php-->
+                    <?php include 'navbar_test.php';?>                   
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="profile.php">Me</a></li>

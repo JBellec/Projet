@@ -1,1 +1,3 @@
 ALTER TABLE `user` CHANGE `id` `id` INT(255) NOT NULL AUTO_INCREMENT, CHANGE `nom` `nom` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, CHANGE `prenom` `prenom` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, CHANGE `pseudo` `pseudo` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, CHANGE `email` `email` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, CHANGE `password` `password` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+ALTER TABLE `user` ADD `admin` INT(4) NULL DEFAULT '0' ;
