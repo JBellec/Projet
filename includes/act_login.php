@@ -1,23 +1,24 @@
-<? /* Fichier appellé lors de la connexion d'un utilisateur */
-    include 'includes/mysql.php';
+<?php /* Fichier appellé lors de la connexion d'un utilisateur */
+	session_start();
+    include ("mysql.php");
     
-	$reponse = $bdd->query('SELECT * FROM user');
+	$reponse = $connect->query('SELECT * FROM user');
 	$donnees = $reponse->fetch();
 	
-	$login_valid = $donnees['email'];
+	$login_valid = $donnees['pseudo'];
 	$pwd_valid= $donnees['password'];
 	
-	$email = filter_input(INPUT_POST, 'email');
+	$pseudo = filter_input(INPUT_POST, 'pseudo');
 	$password = filter_input(INPUT_POST, 'password');
 	
-	if(isset($email) && isset($password)){
-		if($login_valid==$email && $pwd_valid==$password){
-			session_start();
-			$_SESSION['login'] = $email;
+	if(isset($pseudo) && isset($password)){
+		if($login_valid==$pseudo && $pwd_valid==$password){
+			$_SESSION['connected']=TRUE;
+			$_SESSION['login'] = $pseudo;
 			$_SESSION['password'] = $password;
 			
 			//Redirection vers la page membre.
-			//header('location: page membre');
+			header("location: test_session.php");
 		}
 		else{
 			echo '<body onLoad="alert(\'Membre non reconnu...\')">';
