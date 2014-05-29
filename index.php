@@ -7,7 +7,7 @@
             <!-- Jumbotron -->
             <div class="jumbotron">
                 <h1>Our fun project!</h1>
-                <p class="lead">Hi everybody and welcome on our wesite :) . Yes your in the right one ! Here you can scan a QR Code in order to find  your classmates, being his friend, and else. You can also borrow stuff from XID so easily !</p>
+                <p class="lead">Hi everybody and welcome on our wesite :) . Yes your in the right one ! Here you can scan a QR Code in order to find  your classmate, being his friend, and else. You can also borrow stuff from XID so easily !</p>
                 <p><a class="btn btn-lg btn-success" href="#" role="button"> Don't hesitate and get started today</a></p>
             </div><!-- Fin Jumbotron -->
 
