@@ -1,9 +1,8 @@
 <?php
-	/*
-	*	Génére un QRCode stocké dans un php strem depuis
-	*	une chaine de caractère passé en paramètre par txt
+	/*	Génére un QRCode stocké dans un php stream depuis
+	*	une chaine de caractère passé en paramètre variable txt
 	*	
-	*	exemple : truc.php?txt="la chaine de caractère qui finir dans le QRCode"
+	*	exemple : truc.php?txt="la chaine de caractère qui finir dans le QRCode" 
 	*/
 	
 	include '../lib/phpqrcode/qrlib.php';
@@ -17,6 +16,4 @@
     
     // outputs image directly into browser, as PNG stream
     QRcode::png($toQrCode);
-	
 ?>
-

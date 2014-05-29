@@ -1,3 +1,7 @@
+/*
+    Authors : Gaël
+
+*/
 form
 {
 	max-width: 500px;
@@ -6,11 +10,16 @@ form
 }
 .container
 {
-	max-width: 500px;
+	max-width: 100%;
 	min-width: 50px;
 	
 }
+
 body {
-	padding-top : 150px;
-	
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }

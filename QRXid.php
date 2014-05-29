@@ -1,4 +1,5 @@
 <?php include 'includes/header.php' ?>
+<?php include 'includes/navbar.php' ?>
 <?php include 'lib/phpqrcode/qrlib.php';?>
 		<title>QR-Xid</title>
 	</head>
