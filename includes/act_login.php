@@ -10,12 +10,13 @@
 	
 	$pseudo = filter_input(INPUT_POST, 'pseudo');
 	$password = filter_input(INPUT_POST, 'password');
+	$pass_hache = sha1($password);
 	
 	if(isset($pseudo) && isset($password)){
-		if($login_valid==$pseudo && $pwd_valid==$password){
+		if($login_valid==$pseudo && $pwd_valid==$pass_hache){
 			$_SESSION['connected']=TRUE;
 			$_SESSION['login'] = $pseudo;
-			$_SESSION['password'] = $password;
+			//$_SESSION['password'] = $pass_hache;
 			
 			//Redirection vers la page membre.
 			header("location: test_session.php");
