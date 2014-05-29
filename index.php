@@ -35,7 +35,7 @@
                         <input type="checkbox" value="remember-me"> Remember me
                         </label>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='Inscription2.html'">Inscription</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='inscription.php'">Inscription</button>
                     </form>
                 </div><!-- fin 3em colonne -->
             </div><!-- fin du vecteur -->

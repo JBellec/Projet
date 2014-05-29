@@ -11,7 +11,7 @@
     $email = filter_input(INPUT_POST, 'email');
     $nom = filter_input(INPUT_POST, 'nom');
     $prenom = filter_input(INPUT_POST, 'prenom');
-
+	$pass_hache = sha1($pass);
 
 if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
   
@@ -38,7 +38,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                 $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;*/
                
                 // Connexion
-               include 'includes/mysql.php'          
+               include ('mysql.php');        
                
                 // Requête pour compter le nombre d'enregistrements répondant à la clause : champ du pseudo de la table = pseudo posté dans le formulaire
                 $requete = "SELECT count(*) FROM user WHERE pseudo = ?";
@@ -64,7 +64,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                                 $insert_prep = $connect->prepare($insertion);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$pass, ':email'=>$email, ':nom'=>$nom,':prenom'=>$prenom,));
+                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$$pass_hache = sha1($pass), ':email'=>$email, ':nom'=>$nom,':prenom'=>$prenom,));
                                
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($inser_exec === true)
