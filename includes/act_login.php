@@ -1,13 +1,6 @@
-<?php
-	try
-    {
-         $bdd = new PDO('mysql:host=localhost;dbname=projet', 'root', '');
-    }
-    catch (PDOException $e)
-    {
-		exit('problème de connexion à la base');
-    }  
-	
+<? /* Fichier appellé lors de la connexion d'un utilisateur */
+    include 'includes/mysql.php';
+    
 	$reponse = $bdd->query('SELECT * FROM user');
 	$donnees = $reponse->fetch();
 	

@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/css_connexion.css" rel="stylesheet">
+    <link href="css/projet.css" rel="stylesheet">
      
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -53,7 +53,7 @@
 
     <div class="container">
 
-      <form class="form-signin" method ="post" action="login.php">
+      <form class="form-signin" method ="post" action="includes/act_login.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required autofocus>
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>

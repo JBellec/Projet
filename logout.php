@@ -5,6 +5,6 @@
 	
 	//redirection vers la page de connexion par exemple, ou une autre page
 	
-	header('location: connexion.php');
+	header('location: index.php');
 
 ?>

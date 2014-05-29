@@ -62,7 +62,7 @@
 		<div id="contenu"><div class="entête">  
 
     
-    <form method="post" action="inscriptionBDD.php">
+    <form method="post" action="includes/act_inscription.php">
        <div class="form-group">
           <label for="email">Enter email</label>
           <input type="email" class="form-control"  name="email" id ="email" placeholder="Enter email">

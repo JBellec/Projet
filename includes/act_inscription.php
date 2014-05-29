@@ -1,24 +1,20 @@
-
 <?php
-// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
-header('Content-type: text/html; charset=UTF-8');
+    /* Fichier appelé lors de l'inscription d'une personne */
+    
+    header('Content-type: text/html; charset=UTF-8');// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
 
-// Initialisation de la variable du message de réponse
-$message = null;
+    $message = null;// Initialisation de la variable du message de réponse
 
-// Récupération des variables issues du formulaire par la méthode post
-$pseudo = filter_input(INPUT_POST, 'pseudo');
-$pass = filter_input(INPUT_POST, 'password');
-$email = filter_input(INPUT_POST, 'email');
-$nom = filter_input(INPUT_POST, 'nom');
-$prenom = filter_input(INPUT_POST, 'prenom');
-
-
+    // Récupération des variables issues du formulaire par la méthode post
+    $pseudo = filter_input(INPUT_POST, 'pseudo');
+    $pass = filter_input(INPUT_POST, 'password');
+    $email = filter_input(INPUT_POST, 'email');
+    $nom = filter_input(INPUT_POST, 'nom');
+    $prenom = filter_input(INPUT_POST, 'prenom');
 
 
-// Si le formulaire est envoyé
-if (isset($pseudo,$pass))
-{  
+if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
+  
 
     // Teste que les valeurs ne sont pas vides ou composées uniquement d'espaces  
     $pseudo = trim($pseudo) != '' ? $pseudo : null;
@@ -26,36 +22,23 @@ if (isset($pseudo,$pass))
    
 
     // Si $pseudo et $pass différents de null
-        if(isset($pseudo,$pass))
-    {
+        if(isset($pseudo,$pass)) {
                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                 A MODIFIER avec vos valeurs */
                 $hostname = "localhost";
                 $database = "projet";
                 $username = "root";
                 $password = "";
-               
-                // Configuration des options de connexion
-               
-                // Désactive l'éumlateur de requêtes préparées (hautement recommandé)
+
+               // Configuration des options de connexion
+                /* Désactive l'éumlateur de requêtes préparées (hautement recommandé)
                 $pdo_options[PDO::ATTR_EMULATE_PREPARES] = false;
                
                 //      Active le mode exception
-                $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-               
-                // Indique le charset
-                $pdo_options[PDO::MYSQL_ATTR_INIT_COMMAND] = "SET NAMES utf8";
+                $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;*/
                
                 // Connexion
-                try
-                {
-                        $connect = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password, $pdo_options);
-                }
-                catch (PDOException $e)
-                {
-                        exit('problème de connexion à la base');
-                }
-                               
+               include 'includes/mysql.php'          
                
                 // Requête pour compter le nombre d'enregistrements répondant à la clause : champ du pseudo de la table = pseudo posté dans le formulaire
                 $requete = "SELECT count(*) FROM user WHERE pseudo = ?";
