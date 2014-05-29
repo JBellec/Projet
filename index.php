@@ -27,16 +27,7 @@
                 </div><!-- fin 2em colonne -->
                 
                 <div class="col-lg-4"><!-- 3em colonne -->
-                    <form class="form-signin" role="form">
-                        <h2 class="form-signin-heading">Please sign in</h2>
-                        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-                        <input type="password" class="form-control" placeholder="Password" required>
-                        <label class="checkbox">
-                        <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='inscription.php'">Inscription</button>
-                    </form>
+                    <?php include ("includes/connexion.php");?>
                 </div><!-- fin 3em colonne -->
             </div><!-- fin du vecteur -->
             <!-- Site footer -->
