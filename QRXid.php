@@ -19,13 +19,14 @@
 
 		<?php include 'includes/mysql.php';
 	
-			$reponse = $bdd->query('SELECT lien FROM item');
+			$reponse = $connect->query('SELECT * FROM user');
 
 			echo '<h2>QR Code de la base de donnée</h2>';
 
 			while ($fetched = $reponse->fetch()){
 				try {
-					echo '<img src="qr/generate.php?txt='.'http://zoski.fr/'.$fetched['lien'].'" />'; 
+					echo '<img src="qr/generate.php?txt='.'http://zoski.fr/'.$fetched['id'].'" />'.$fetched['prenom'];
+				
 				}
 				catch (Exception $e){
 					die('Erreur : ' . $e->getMessage());
