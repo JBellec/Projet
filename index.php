@@ -15,14 +15,14 @@
             <div class="row"> <!-- Début du vecteur -->
                 <div class="col-lg-4"><!-- 1er colonne -->
                     <h2>XID QRcode</h2>
-                    <p>Would you borrow XID objects ? Or check if the item you want is available in xid ? </br> Our project is to make your work easier, it is based QRcode (yes too much fun).
+                    <p>Would you borrow XID's objects ? Or check if the item you want is available in the XID ? </br> Our project is to make your work easier, it is based QRcode (yes too much fun).
                         Indeed, scanning the QRCode of the requested object can add the product, click on OKeeyyy and it's done! : D</p>
                     <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- fin 1er colonne -->
                 
                 <div class="col-lg-4"><!-- 2em colonne -->
                     <h2>Profil Access</h2>
-                    <p></p>
+                    <p>You met a classmate and you want to take the contact information faster? Or visit his profile and see his photos (chouette)? </br> Scan the QRcode and let you guide!  </p>
                     <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- fin 2em colonne -->
                 
