@@ -1,5 +1,6 @@
-<?php include 'includes/header.php'; 
- include 'includes/navbar.php'; ?>
+<?php include 'includes/header.php'; ?>
+<title>Profil</title>
+<?php include 'includes/navbar.php'; ?>
 
 	<title>Profil</title>
  </head> 	

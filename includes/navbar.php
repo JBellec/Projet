@@ -20,7 +20,7 @@
                         <?php include 'navbar_test.php';?>                   
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="profile.php"><i class="fa fa-child"></i> Me</a></li>
+                        <li><a href="profil.php"><i class="fa fa-child"></i> Me</a></li>
 					    <li><a href="logout.php"><i class="fa fa-unlock"></i> Logout</a></li><!-- ICI JULIEN -->
                     </ul>
                 </div><!--/.nav-collapse -->
