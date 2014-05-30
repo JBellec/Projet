@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 <?php include 'includes/header.php'; ?>
 <title>Profil</title>
 <?php include 'includes/navbar.php'; ?>
+=======
+<?php include 'includes/header.php'; 
+ include 'includes/navbar.php';
+  include 'includes/mysql.php';?>
+
+>>>>>>> 28fd536b7446ae3b9119dbf45589b46b7759cdb6
 
 	
       <div class="container">    <!-- Three columns of text below the carousel -->
@@ -17,21 +24,47 @@
           
           <h2>Informations divers</h2>
           <p>
+<<<<<<< HEAD
             <?php include 'includes/mysql.php' ;
              
              $reponse = $connect->query('SELECT * FROM user');
+=======
+            <?php
+<<<<<<< HEAD
+             
+=======
+              try
+                  {
+                        // On se connecte à MySQL
+                         $bdd = new PDO('mysql:host=localhost;dbname=projet', 'root', '');
+                    }
+              catch(Exception $e)
+                   {
+                        // En cas d'erreur, on affiche un message et on arrête tout
+                        die('Erreur : '.$e->getMessage());
+                    }
+>>>>>>> d1a575fe6b0fb4eb2d862db813337e96f480843f
+             // On récupère tout le contenu de la table jeux_video
+             $req = $connect->prepare('SELECT * FROM user Where user = ?');
+             $req->execute(array($_GET['pseudo']));
+
+>>>>>>> 28fd536b7446ae3b9119dbf45589b46b7759cdb6
 
              // On affiche chaque entrée une à une
-             while ($donnees = $reponse->fetch())
+             while ($donnees = $req->fetch())
                 {
                     ?>
                         <p>
+
+                        <?php echo 'je suis dans la boucle while'; ?>
                         <?php echo $donnees['nom']; ?><br />
                         <?php echo $donnees['prenom']; ?></br>
+                        
+                        <!--<?php echo $donnees['']; ?> -->
                          </p>
                     <?php
                 }
-               $reponse->closeCursor(); // Termine le traitement de la requête
+               $req->closeCursor(); // Termine le traitement de la requête
              ?>
 
 
