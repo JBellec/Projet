@@ -1,32 +1,30 @@
-<?php /* Fichier appellé lors de la connexion d'un utilisateur */
-	session_start();
-    include ("mysql.php");
-    
-	$reponse = $connect->query('SELECT * FROM user');
-	$donnees = $reponse->fetch();
+<?php  /* Fichier appellé lors de la connexion d'un utilisateur */
 	
-	$login_valid = $donnees['pseudo'];
-	$pwd_valid= $donnees['password'];
+	include ('mysql.php');
 	
-	$pseudo = filter_input(INPUT_POST, 'pseudo');
-	$password = filter_input(INPUT_POST, 'password');
-	$pass_hache = sha1($password);
-	
-	if(isset($pseudo) && isset($password)){
-		if($login_valid==$pseudo && $pwd_valid==$pass_hache){
-			$_SESSION['connected']=TRUE;
-			$_SESSION['login'] = $pseudo;
-			//$_SESSION['password'] = $pass_hache;
-			
-			//Redirection vers la page membre.
-			header("location: test_session.php");
-		}
-		else{
-			echo '<body onLoad="alert(\'Membre non reconnu...\')">';
-			echo '<meta http-equiv="refresh" content="0;URL=index.htm">';
-		}
+	// Hachage du mot de passe
+	$pass_hache = sha1($_POST['password']);
+	$pseudo = $_POST['pseudo'];
+
+	// Vérification des identifiants
+	$req = $connect->prepare('SELECT id FROM user WHERE pseudo = :pseudo AND password = :password');
+	$req->execute(array(
+		'pseudo' => $pseudo,
+		'password' => $pass_hache));
+
+	$resultat = $req->fetch();
+
+	if (!$resultat)
+	{
+		echo 'Mauvais identifiant ou mot de passe !';
 	}
-	else{
-		echo 'Les variables du formulaire ne sont pas déclarées';
+	else
+	{
+		session_start();
+		$_SESSION['id'] = $resultat['id'];
+		$_SESSION['pseudo'] = $pseudo;
+		echo 'Vous êtes connecté !';
+		
+		//header('Location: http://localhost/Projet/'); Page de redirection à modifier
 	}
 ?>

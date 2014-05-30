@@ -64,7 +64,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                                 $insert_prep = $connect->prepare($insertion);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$$pass_hache = sha1($pass), ':email'=>$email, ':nom'=>$nom,':prenom'=>$prenom,));
+                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$pass_hache = sha1($pass), ':email'=>$email, ':nom'=>$nom,':prenom'=>$prenom,));
                                
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($inser_exec === true)
