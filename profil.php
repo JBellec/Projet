@@ -1,5 +1,7 @@
 <?php include 'includes/header.php'; 
- include 'includes/navbar.php'; ?>
+ include 'includes/navbar.php';
+  include 'includes/mysql.php';?>
+
 
 	<title>Profil</title>
  </head> 	
@@ -19,30 +21,27 @@
           <h2>Informations divers</h2>
           <p>
             <?php
-              try
-                  {
-                        // On se connecte à MySQL
-                         $bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-                    }
-              catch(Exception $e)
-                   {
-                        // En cas d'erreur, on affiche un message et on arrête tout
-                        die('Erreur : '.$e->getMessage());
-                    }
+             
              // On récupère tout le contenu de la table jeux_video
-             $reponse = $bdd->query('SELECT * FROM user');
+             $req = $connect->prepare('SELECT * FROM user Where user = ?');
+             $req->execute(array($_GET['pseudo']));
+
 
              // On affiche chaque entrée une à une
-             while ($donnees = $reponse->fetch())
+             while ($donnees = $req->fetch())
                 {
                     ?>
                         <p>
+
+                        <?php echo 'je suis dans la boucle while'; ?>
                         <?php echo $donnees['nom']; ?><br />
                         <?php echo $donnees['prenom']; ?></br>
+                        
+                        <!--<?php echo $donnees['']; ?> -->
                          </p>
                     <?php
                 }
-               $reponse->closeCursor(); // Termine le traitement de la requête
+               $req->closeCursor(); // Termine le traitement de la requête
              ?>
 
 
