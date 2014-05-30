@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-<?php include 'includes/header.php'; ?>
-<title>Profil</title>
-<?php include 'includes/navbar.php'; ?>
-=======
+
 <?php include 'includes/header.php'; 
  include 'includes/navbar.php';
-  include 'includes/mysql.php';?>
-
->>>>>>> 28fd536b7446ae3b9119dbf45589b46b7759cdb6
+  include 'includes/mysql.php'; ?>
 
 	
       <div class="container">    <!-- Three columns of text below the carousel -->
@@ -24,43 +18,26 @@
           
           <h2>Informations divers</h2>
           <p>
-<<<<<<< HEAD
-            <?php include 'includes/mysql.php' ;
+
+            <?php 
              
              $reponse = $connect->query('SELECT * FROM user');
-=======
-            <?php
 
-             
-
-              try
-                  {
-                        // On se connecte à MySQL
-                         $bdd = new PDO('mysql:host=localhost;dbname=projet', 'root', '');
-                    }
-              catch(Exception $e)
-                   {
-                        // En cas d'erreur, on affiche un message et on arrête tout
-                        die('Erreur : '.$e->getMessage());
-                    }
-
-             // On récupère tout le contenu de la table jeux_video
+            
+             // On récupère tout le contenu de la table user
              $req = $connect->prepare('SELECT * FROM user Where pseudo = ?');
              $req->execute(array($_GET['pseudo']));
-
->>>>>>> 28fd536b7446ae3b9119dbf45589b46b7759cdb6
-
              // On affiche chaque entrée une à une
              while ($donnees = $req->fetch())
                 {
                     ?>
                         <p>
 
-                        <?php echo 'je suis dans la boucle while'; ?>
+                        
                         <?php echo $donnees['nom']; ?><br />
                         <?php echo $donnees['prenom']; ?></br>
                         
-                        <!--<?php echo $donnees['']; ?> -->
+                        
                          </p>
                     <?php
                 }
@@ -75,7 +52,7 @@
           
           <h2>Liens utiles</h2>
           <p><a class="btn btn-default" href="http://www.facebook.com" role="button">Facebook</a></p>
-		  <p><a class="btn btn-default" href="http://www.siteduzero.com" role="button">Site du Zéro</a></p>
+		      <p><a class="btn btn-default" href="http://www.siteduzero.com" role="button">Site du Zéro</a></p>
           <p><a class="btn btn-default" href="http://www.twitter.com" role="button">Twitter</a></p>
 		  
         </div><!-- fin colonne -->
