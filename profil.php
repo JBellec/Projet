@@ -12,7 +12,7 @@
           <p>
 
           </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="photoprofil.php" role="button">Photos &raquo;</a></p>
         </div><!-- fin colonne 1 -->
         <div class="col-lg-4"> <!-- debut colonne 2 -->
           
