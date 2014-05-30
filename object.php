@@ -1,9 +1,15 @@
 <?php include 'includes/header.php'; 
     include 'includes/mysql.php';
+<<<<<<< HEAD
     echo $_GET['id'];
     /* On va effectuer une requette préparé pour récupérer les différentes informations de l'objet */
     $req = $connect->prepare('SELECT name FROM object WHERE id = ?');
     $req->execute(array($_GET['id'])) or die(print_r($connect->errorInfo()));
+=======
+    
+    $req = $connect->prepare('SELECT name FROM object WHERE id = ?');
+    $req->execute(array($_GET['id'])) or die(print_r($connect->errorInfo()));; 
+>>>>>>> dfe0454db99123438312e763186fb6f50fee4219
     $result=$req->fetch();
     $object_name = $result[0];
 	$req->closeCursor();
