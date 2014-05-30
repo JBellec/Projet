@@ -1,6 +1,6 @@
 <?php include 'includes/header.php';
    include 'includes/navbar.php'; ?>
-        <title>QR-Ensisa</title>
+        <title>Admin Panel</title>
 	</head>  
 	<body>
 	<div class="container-fluid">
@@ -18,16 +18,8 @@
             $section = $_GET['sec'];
             if(isset($section)) {
                 include "includes/admin/$section.php";
-            }
-                                     
-                    
-                            
-                    default:
-                        include 'includes/admin/all.php';
-                    break;
-                }
-            
-            }
+            } else 
+                include "includes/admin/all.php";
           ?>
       </div>
     </div><!-- /container-fluid-->
