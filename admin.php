@@ -15,11 +15,14 @@
      
         <div class="col-sm-9 col-md-10">
           <?php
-            $section = $_GET['sec'];
-            if(isset($section)) {
+            
+            if(isset($_GET['sec'])) {
+                $section = $_GET['sec'];
                 include "includes/admin/$section.php";
-            } else 
+            } else {
+                echo "J'affiche tout !";
                 include "includes/admin/all.php";
+                }
           ?>
       </div>
     </div><!-- /container-fluid-->

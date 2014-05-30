@@ -2,17 +2,18 @@
     Authors : Gaël
 
 */
-form
-{
+
+form {
 	max-width: 500px;
 	min-width: 50px;
-	
 }
-.container
-{
+.container {
 	max-width: 100%;
-	min-width: 50px;
-	
+	min-width: 50px;	
+}
+
+.footer {
+    text-align : center;
 }
 
 body {

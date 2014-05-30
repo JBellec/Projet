@@ -14,14 +14,27 @@
           <p>
 
           </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="photoprofil.php" role="button">Photos &raquo;</a></p>
         </div><!-- fin colonne 1 -->
         <div class="col-lg-4"> <!-- debut colonne 2 -->
           
           <h2>Informations divers</h2>
           <p>
             <?php
+<<<<<<< HEAD
              
+=======
+              try
+                  {
+                        // On se connecte à MySQL
+                         $bdd = new PDO('mysql:host=localhost;dbname=projet', 'root', '');
+                    }
+              catch(Exception $e)
+                   {
+                        // En cas d'erreur, on affiche un message et on arrête tout
+                        die('Erreur : '.$e->getMessage());
+                    }
+>>>>>>> d1a575fe6b0fb4eb2d862db813337e96f480843f
              // On récupère tout le contenu de la table jeux_video
              $req = $connect->prepare('SELECT * FROM user Where user = ?');
              $req->execute(array($_GET['pseudo']));
@@ -51,8 +64,10 @@
         <div class="col-lg-4"> <!-- debut colonne 3 -->
           
           <h2>Liens utiles</h2>
-          <p> <h5> Lien facebook :<h5> <a href="http://www.siteduzero.com">Site du Zéro</a></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p> <h5> Lien facebook :<h5> 
+		  <p><a class="btn btn-default" href="http://www.siteduzero.com" role="button">Site du Zéro</a></p>
+          <p><a class="btn btn-default" href="http://www.twitter.com" role="button">Twitter</a></p>
+		  
         </div><!-- fin colonne -->
       </div><!-- /.row -->
 	 
