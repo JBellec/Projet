@@ -52,8 +52,10 @@
         <div class="col-lg-4"> <!-- debut colonne 3 -->
           
           <h2>Liens utiles</h2>
-          <p> <h5> Lien facebook :<h5> <a href="http://www.siteduzero.com">Site du Zéro</a></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p> <h5> Lien facebook :<h5> 
+		  <p><a class="btn btn-default" href="http://www.siteduzero.com" role="button">Site du Zéro</a></p>
+          <p><a class="btn btn-default" href="http://www.twitter.com" role="button">Twitter</a></p>
+		  
         </div><!-- fin colonne -->
       </div><!-- /.row -->
 	 

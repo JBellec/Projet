@@ -9,7 +9,7 @@
 	
 	
 	<form method="post" action="page.php" enctype="multipart/form-data">
-	<form method="post" action="reception.php" enctype="multipart/form-data">
+	
      <label for="icone">Image (JPG, PNG ou GIF | max. 15 Ko) :</label><br />
      <input type="file" name="icone" id="icone" /><br />
      
