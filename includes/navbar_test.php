@@ -1,9 +1,11 @@
 <?php 
 if(isset($_SESSION['login'])) { //$_SESSION['login'] = pseudo
         include 'mysql.php';
-       $req='SELECT admin FROM user WHERE pseudo='.$_SESSION['pseudo'];
-       $isadmin=$connect->query($req);
-       //$fetched=$isadmin->fetch();
+
+		$req = $connect->prepare('SELECT admin FROM user WHERE pseudo = ?');
+		$req->execute(array($_SESSION['pseudo']));
+		$resultat=$req->fetch();
+		$isadmin = $resultat[0];
 		
 		if($isadmin==1) {
         include 'navbar_isadmin.php';
