@@ -10,8 +10,8 @@ CamelCase pour les nomDeVariableLong
 
 Librairies externes :
 ---------------------
-* http://phpqrcode.sourceforge.net/
-	déziper dans le dossier lib
+* http://phpqrcode.sourceforge.net/	déziper dans le dossier lib
+* https://fortawesome.github.io/Font-Awesome/ déziper dans le dossier lib
 * http://getbootstrap.com
 
 Server requierement :
