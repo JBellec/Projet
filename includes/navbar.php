@@ -20,7 +20,6 @@
                         <?php include 'navbar_test.php';?>                   
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        
 						<?php	
 							if(isset($_SESSION['pseudo'])){
 						?>		
@@ -29,6 +28,7 @@
 						<?php
 						}
 						?>
+           
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
