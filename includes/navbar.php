@@ -30,13 +30,10 @@
 						}
 						?>
 						<?php 
-							if(!isset($_SESSION['pseudo']))
-							{
-						?>
-						<li><a href="includes/connexion.php"><i class="fa fa-unlock"></i> Log in</a></li>
-						<?php
-						}
-						?>           
+							if(!isset($_SESSION['pseudo'])){
+								include ("navbar_connect.php");
+							}						
+						?>         
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
