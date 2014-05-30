@@ -71,7 +71,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                                 {
                                         /* Démarre une session si aucune n'est déjà existante et enregistre le pseudo dans la variable de session $_SESSION['login'] qui donne au visiteur la possibilité de se connecter.  */
                                         if (!session_id()) session_start();
-                                        $_SESSION['login'] = $pseudo;
+                                        $_SESSION['pseudo'] = $pseudo;
                                        
                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                         $message = 'Votre inscription est enregistrée.';

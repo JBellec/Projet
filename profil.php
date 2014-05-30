@@ -22,7 +22,7 @@
               try
                   {
                         // On se connecte à MySQL
-                         $bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+                         $bdd = new PDO('mysql:host=localhost;dbname=projet', 'root', '');
                     }
               catch(Exception $e)
                    {
