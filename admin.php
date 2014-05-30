@@ -8,9 +8,9 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
+                <li><a href="admin.php?act=overview">Overview</a></li>
+                <li><a href="admin.php?act=add_object">Add object</a></li>
+                <li><a href="admin.php?act=add_preset">Add object preset</a></li>
                 <li><a href="#">Export</a></li>
             </ul>
                 <ul class="nav nav-sidebar">
