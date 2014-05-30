@@ -1,5 +1,5 @@
 <?php include 'includes/header.php';
-    include 'includes/navbar.php'; ?>
+   include 'includes/navbar.php'; ?>
         <title>QR-Ensisa</title>
 	</head>  
 	<body>
@@ -8,24 +8,29 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="admin.php?act=overview">Overview</a></li>
-                <li><a href="admin.php?act=add_object">Add object</a></li>
-                <li><a href="admin.php?act=add_preset">Add object preset</a></li>
-                <li><a href="#">Export</a></li>
+                <li><a href="admin.php">Overview</a></li>
+                <?php include 'includes/admin/nav.php'; ?>
             </ul>
-                <ul class="nav nav-sidebar">
-                <li><a href="">Nav item</a></li>
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
-                <li><a href="">More navigation</a></li>
-                </ul>
-                <ul class="nav nav-sidebar">
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
-            </ul>
-        </div>
+        </div><!-- /side bar -->
+     
+        <div class="col-sm-9 col-md-10">
+          <?php
+            $section = $_GET['sec'];
+            if(isset($section)) {
+                include "includes/admin/$section.php";
+            }
+                                     
+                    
+                            
+                    default:
+                        include 'includes/admin/all.php';
+                    break;
+                }
+            
+            }
+          ?>
+      </div>
+    </div><!-- /container-fluid-->
 	</body>
 	
 <?php include 'includes/footer.php'; ?>
