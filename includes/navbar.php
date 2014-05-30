@@ -1,4 +1,5 @@
 </head>
+<body>
     <div class="container">
         <!-- Static navbar -->
         <div class="navbar navbar-default" role="navigation">
@@ -28,10 +29,17 @@
 						<?php
 						}
 						?>
-           
+						<?php 
+							if(!isset($_SESSION['pseudo']))
+							{
+						?>
+						<li><a href="includes/connexion.php"><i class="fa fa-unlock"></i> Log in</a></li>
+						<?php
+						}
+						?>           
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </div>
     </div><!--/.container -->
-<body>
+
