@@ -1,7 +1,7 @@
 <?php  /* Fichier appellé lors de la connexion d'un utilisateur */
 	
 	include ('mysql.php');
-	
+	include('header.php');
 	// Hachage du mot de passe
 	$pass_hache = sha1($_POST['password']);
 	$pseudo = $_POST['pseudo'];
@@ -20,11 +20,11 @@
 	}
 	else
 	{
-		session_start();
+
 		$_SESSION['id'] = $resultat['id'];
 		$_SESSION['pseudo'] = $pseudo;
 		echo 'Vous êtes connecté !';
 		
-		//header('Location: http://localhost/Projet/'); Page de redirection à modifier
+		header('Location: http://localhost/Projet/'); 
 	}
 ?>
