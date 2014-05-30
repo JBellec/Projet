@@ -8,20 +8,51 @@
       <div class="row">
         <div class="col-lg-4"> <!--debut colonne 1 -->
           <img class="img-circle" src="image/img.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <h2>Meeee ^_^</h2>
+          <p>
+
+          </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- fin colonne 1 -->
         <div class="col-lg-4"> <!-- debut colonne 2 -->
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          
+          <h2>Informations divers</h2>
+          <p>
+            <?php
+              try
+                  {
+                        // On se connecte à MySQL
+                         $bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+                    }
+              catch(Exception $e)
+                   {
+                        // En cas d'erreur, on affiche un message et on arrête tout
+                        die('Erreur : '.$e->getMessage());
+                    }
+             // On récupère tout le contenu de la table jeux_video
+             $reponse = $bdd->query('SELECT * FROM user');
+
+             // On affiche chaque entrée une à une
+             while ($donnees = $reponse->fetch())
+                {
+                    ?>
+                        <p>
+                        <?php echo $donnees['nom']; ?><br />
+                        <?php echo $donnees['prenom']; ?></br>
+                         </p>
+                    <?php
+                }
+               $reponse->closeCursor(); // Termine le traitement de la requête
+             ?>
+
+
+          </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- fin colonne 2 -->
         <div class="col-lg-4"> <!-- debut colonne 3 -->
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          
+          <h2>Liens utiles</h2>
+          <p> <h5> Lien facebook :<h5> <a href="http://www.siteduzero.com">Site du Zéro</a></p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- fin colonne -->
       </div><!-- /.row -->
