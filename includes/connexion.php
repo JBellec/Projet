@@ -6,6 +6,6 @@
         <label class="checkbox">
         <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='inscription.php'">Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="self.location.href='inscription.php'"> Sign up</button>
 	</form>

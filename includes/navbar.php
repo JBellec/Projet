@@ -9,13 +9,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><i class="fa fa-qrcode"></i> qrEnsisa</a>
+                <a class="navbar-brand" href="index.php">  QR Ensisa</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <!--<li class="active"><a href="#">Link</a></li>-->
                     
-                    <li><a href="qrxid.php">QR Xid</a></li>
+                    <li><a href="qrxid.php"></i><i class="fa fa-qrcode"></i> QR Xid</a></li>
                     <?php include 'navbar_test.php';?>                   
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
