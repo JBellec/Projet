@@ -2,8 +2,8 @@
     include 'includes/mysql.php';
     echo $_GET['id'];
     /* On va effectuer une requette préparé pour récupérer les différentes informations de l'objet */
-    $req = $connect->query('SELECT name FROM object WHERE id = ?');
-    $req->execute(array($_GET['id'])) or die(print_r($connect->errorInfo()));; 
+    $req = $connect->prepare('SELECT name FROM object WHERE id = ?');
+    $req->execute(array($_GET['id'])) or die(print_r($connect->errorInfo()));
     $result=$req->fetch();
     $object_name = $result[0];
 	$req->closeCursor();
