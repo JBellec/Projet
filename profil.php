@@ -30,9 +30,9 @@
              $reponse = $connect->query('SELECT * FROM user');
 =======
             <?php
-<<<<<<< HEAD
+
              
-=======
+
               try
                   {
                         // On se connecte à MySQL
@@ -43,9 +43,9 @@
                         // En cas d'erreur, on affiche un message et on arrête tout
                         die('Erreur : '.$e->getMessage());
                     }
->>>>>>> d1a575fe6b0fb4eb2d862db813337e96f480843f
+
              // On récupère tout le contenu de la table jeux_video
-             $req = $connect->prepare('SELECT * FROM user Where user = ?');
+             $req = $connect->prepare('SELECT * FROM user Where pseudo = ?');
              $req->execute(array($_GET['pseudo']));
 
 >>>>>>> 28fd536b7446ae3b9119dbf45589b46b7759cdb6
