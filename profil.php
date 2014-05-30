@@ -36,7 +36,7 @@
                         
                         <?php echo $donnees['nom']; ?><br />
                         <?php echo $donnees['prenom']; ?></br>
-                        
+                        <?php echo$donnees['pseudo'];?>
                         
                          </p>
                     <?php
