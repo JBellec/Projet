@@ -2,7 +2,7 @@
     include 'includes/mysql.php';
     
     $req = $connect->prepare('SELECT name FROM object WHERE id = ?');
-    $req->execute(array($_GET['id'])) or die(print_r($connect->errorInfo()));; 
+    $req->execute(array($_GET['id'])); 
     $result=$req->fetch();
     $object_name = $result[0];
 	$req->closeCursor();

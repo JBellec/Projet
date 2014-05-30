@@ -5,6 +5,6 @@
         <li><a href="admin.php">Administration</a></li>
         <li class="divider"></li>
         <li class="dropdown-header">Nav header</li>
-        <?php include 'includes/admin/nav.php' ?>
+        <?php include 'admin/nav.php' ?>
     </ul>
 </li>
