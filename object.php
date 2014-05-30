@@ -18,17 +18,16 @@
             else {  //sinon il est nécessaire de se connecter
                 include "include/object/login.php";
             }
-        }
-    
-    
-    
-        include 'includes/object/description.php';
-            if(isset($_SESSION['pseudo'])){
-                include 'includes/object/borrow.php';
-            }
-            else {
-                echo 'You should login to borrow this item';
-            }      
+        } else {/* On fait un accès direct depuis l'administration par exe */
+        
+            include 'includes/object/description.php';
+                if(isset($_SESSION['pseudo'])){
+                    include 'includes/object/borrow.php';//on affiche de quoi emprunter l'objet
+                }
+                else {
+                    echo 'You should login to borrow this item'; // on doit se connecter
+                }
+            }    
     ?>  
 </div> <!-- /container -->
     <?php include 'includes/footer.php'; ?>
