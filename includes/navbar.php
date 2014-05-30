@@ -20,8 +20,15 @@
                         <?php include 'navbar_test.php';?>                   
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="profile.php"><i class="fa fa-child"></i> Me</a></li>
-					    <li><a href="logout.php"><i class="fa fa-unlock"></i> Logout</a></li><!-- ICI JULIEN -->
+                        
+						<?php	
+							if(isset($_SESSION['pseudo'])){
+						?>		
+								<li><a href="profile.php"><i class="fa fa-child"></i><?php echo $_SESSION['pseudo'];?> </a></li>
+								<li><a href="logout.php"><i class="fa fa-unlock"></i> Logout</a></li>
+						<?php
+						}
+						?>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
