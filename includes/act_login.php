@@ -1,5 +1,4 @@
 <?php  /* Fichier appellé lors de la connexion d'un utilisateur */
-	
 	include ('mysql.php');
 	include('header.php');
 	// Hachage du mot de passe
@@ -13,18 +12,15 @@
 		'password' => $pass_hache));
 
 	$resultat = $req->fetch();
-
-	if (!$resultat)
-	{
+    
+	if (!$resultat)	{
 		echo 'Mauvais identifiant ou mot de passe !';
-	}
-	else
-	{
-
+		$req->closeCursor();
+	} else {
 		$_SESSION['id'] = $resultat['id'];
 		$_SESSION['pseudo'] = $pseudo;
 		echo 'Vous êtes connecté !';
-		
-		header('Location: http://localhost/Projet/'); 
+		$req->closeCursor();
+		header('Location: ../index.php'); 
 	}
 ?>
