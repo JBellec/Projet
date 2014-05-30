@@ -6,6 +6,6 @@
         <div class="form-group">
             <input type="password" placeholder="Password" name="password" id="password" class="form-control">
         </div>
-			<button type="submit" class="btn btn-success">Sign in</button>
+			<button type="submit" class="btn btn-default">Sign in</button>
     </form>
 </div>
