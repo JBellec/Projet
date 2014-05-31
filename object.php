@@ -13,7 +13,7 @@
     <?php 
         if(isset($_GET['qr'])) { /* Pour un accès par qr Code */
             if(isset($_SESSION['pseudo'])){
-				include 'includes/object/preset.php';
+				include 'includes/object/description.php';
                 include 'includes/object/borrow.php'; //si on est connecté on peu emprunter
             }
             else {  //sinon il est nécessaire de se connecter
@@ -21,9 +21,9 @@
             }
         } else {/* On fait un accès direct depuis l'administration par exe */
         
-            include 'includes/object/description.php';
+            
                 if(isset($_SESSION['pseudo'])){
-					include 'includes/object/preset.php';
+					include 'includes/object/description.php';
                     include 'includes/object/borrow.php';//on affiche de quoi emprunter l'objet
                 }
                 else {
