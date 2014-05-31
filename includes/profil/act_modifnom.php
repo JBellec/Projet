@@ -1,6 +1,3 @@
-
-
-
 <?php
     /* Fichier appelé lors de l'inscription d'une personne */
     
@@ -9,26 +6,12 @@
     $message = null;// Initialisation de la variable du message de réponse
   
     // Récupération des variables issues du formulaire par la méthode post
+$nom = filter_input(INPUT_POST, 'nom');
+$pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
 
-    $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
-    $pseudo = filter_input(INPUT_POST, 'pseudo');
-    $pass = filter_input(INPUT_POST, 'password');
-    //$email = filter_input(INPUT_POST, 'email');
-    ($nom) $nom = filter_input(INPUT_POST, 'nom');
-    ($prenom) $prenom = filter_input(INPUT_POST, 'prenom');
-    $pass_hache = sha1($pass);
-
-if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
-  
-
-    // Teste que les valeurs ne sont pas vides ou composées uniquement d'espaces  
-    $pseudo = trim($pseudo) != '' ? $pseudo : null;
-    $pass = trim($pass) != '' ? $pass : null;
-   
-
-    // Si $pseudo et $pass différents de null
-        if(isset($pseudo,$pass)) {
-            
+   // Si $pseudo et $pass différents de null
+        if(isset($pseudoactuel,$nom)) {
+            echo 'ligne14';
                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                 A MODIFIER avec vos valeurs */
                 $hostname = "localhost";
@@ -44,7 +27,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                 $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;*/
                
                 // Connexion
-               include ('mysql.php');
+               include ('../mysql.php');
                       
                
                 // Requête pour compter le nombre d'enregistrements répondant à la clause : champ du pseudo de la table = pseudo posté dans le formulaire
@@ -52,8 +35,8 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                
                 try
                 {
-                        
-                        // préparation de la requête
+                    echo'ligne 38';
+                	 // préparation de la requête
                         $req_prep = $connect->prepare($requete);
                        
                         // Exécution de la requête en passant la position du marqueur et sa variable associée dans un tableau
@@ -67,13 +50,13 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                         {
                           
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $modification = "UPDATE user SET pseudo =:nvpseudo, password =:nvpassword,nom =:nvnom, prenom=:nvprenom WHERE pseudo = :pseudoactuel";
+                                $modification = "UPDATE user SET nom =:nvnom WHERE pseudo = :pseudoactuel";
                                
                                 // préparation de la modification
                                 $modif_prep = $connect->prepare($modification);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $modif_exec = $modif_prep->execute(array(':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,':pseudoactuel'=>$pseudoactuel));
+                                $modif_exec = $modif_prep->execute(array(':nvnom'=>$nom,':pseudoactuel'=>$pseudoactuel));
                                
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($modif_exec === true)
@@ -100,9 +83,5 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                         $message = 'Problème dans la requête de modification';
                 }      
         }
-        else
-        {    // Au moins un des deux champs "pseudo" ou "mot de passe" n'a pas été rempli
-                $message = 'Les champs Pseudo et Mot de passe doivent être remplis.';
-        }
-}
+        
 ?>

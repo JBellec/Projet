@@ -1,10 +1,10 @@
-<?php include '../header.php';
-    include '../navbar.php'; ?>
+<?php include 'includes/header.php';
+    include 'includes/navbar.php'; ?>
   
   <div class="jumbotron">
                 <h1>Vos modification par là!</h1>
                 <p class="lead">
-          <form method="post" action="act_modification.php">
+          <form method="post" action="includes/profil/act_modification.php">
             <div class="form-group">
               <label for="pseudoactuel">Enter votre pseudo actuel</label>
               <input type="pseudoactuel" class="form-control"  name="pseudoactuel" id ="pseudoactuel" placeholder="Enter pseudo">
