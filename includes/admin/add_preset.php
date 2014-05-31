@@ -1,10 +1,7 @@
 <h1 class="page-header">Preset administration</h1>
 <?php include 'includes/mysql.php';
     /* On se connecte est on récupérer tous les preset deja existant que l'on affiche dans un tableau */
-    
-
-
-?>
+    $preset = $connect->query('SELECT * FROM preset'); ?>
 <h2 class="sub-header">Available Presets</h2>
 <div class="table-responsive">
     <table class="table table-striped">
@@ -20,19 +17,31 @@
                 <th>GPU</th>
             </tr>
         </thead>
-    <tbody>
-        <tr>
-            <td>1,001</td>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-            <td>dolor</td>
-            <td>dolor</td>
-        </tr>
+        <tbody>
+        <?php while ($fetched = $preset->fetch()){?>
+            <tr>
+                <td><?php echo $fetched['name']; ?></td>
+                <td><?php echo $fetched['lenght']; ?></td>
+                <td><?php echo $fetched['number_port']; ?></td>
+                <td><?php echo $fetched['cpu']; ?></td>
+                <td><?php echo $fetched['frequence']; ?></td>
+                <td><?php echo $fetched['ram']; ?></td>
+                <td><?php echo $fetched['hard_drive']; ?></td>
+                <td><?php echo $fetched['gpu']; ?></td>
+            </tr>
+        <?php } 
+        $preset->closeCursor();?>
         </tbody>
     </table>
 </div> <!-- /table-responsive-->
 
 <h2 class="sub-header">Add preset</h2>
+
+
+
+
+
+
+
+
+
