@@ -65,13 +65,13 @@ echo'ligne 21';
                         {
                           echo 'ligne 66';
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $modification = "UPDATE user SET pseudo =:nvpseudo, password =:nvpassword,nom =:nvnom, prenom=:nvprenom WHERE pseudo = ?";
+                                $modification = "UPDATE user SET pseudo =:nvpseudo, password =:nvpassword,nom =:nvnom, prenom=:nvprenom WHERE pseudo = :pseudo";
                                echo'ligne 69';
                                 // préparation de la modification
                                 $modif_prep = $connect->prepare($modification);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $modif_exec = $modif_prep->execute(array($_SESSION['pseudo'], ':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,));
+                                $modif_exec = $modif_prep->execute(array(':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,':pseudo'=>$_SESSION['pseudo']));
                                echo'ligne 75';
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($modif_exec === true)
