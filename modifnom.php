@@ -6,14 +6,38 @@
                 <p class="lead">
           <form method="post" action="includes/profil/act_modifnom.php">
             <div class="form-group">
-              <label for="pseudoactuel">Enter votre pseudo actuel</label>
+              <label for="pseudoactuel">Enter your recent pseudo</label>
               <input type="pseudoactuel" class="form-control"  name="pseudoactuel" id ="pseudoactuel" placeholder="Enter pseudo">
             </div>
 
             <div class="form-group">
-              <label for="nom">NVNom</label>
-              <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom">
+              <label for="nom">Enter your new name</label>
+              <input type="text" class="form-control" name="nom" id="nom" placeholder="Enter name">
             </div>
+          </form>
+          <form method="post" action="includes/profil/act_modifnom.php">
+            <div class="form-group">
+              <label for="pseudoactuel">Enter your recent pseudo</label>
+              <input type="pseudoactuel" class="form-control"  name="pseudoactuel" id ="pseudoactuel" placeholder="Enter pseudo">
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Enter your new lastname</label>
+              <input type="text" class="form-control" name="nom" id="nom" placeholder="Enter lastname">
+            </div>
+          </form>
+          <form method="post" action="includes/profil/act_modifnom.php">
+            <div class="form-group">
+              <label for="pseudoactuel">Enter your recent pseudo</label>
+              <input type="pseudoactuel" class="form-control"  name="pseudoactuel" id ="pseudoactuel" placeholder="Enter pseudo">
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Enter your new email </label>
+              <input type="text" class="form-control" name="nom" id="nom" placeholder="example@example.com">
+            </div>
+          </form>
+          
   
             </br>
   
@@ -21,7 +45,6 @@
               <input type="submit" class="btn btn-success">modifier</input>
             </div>
 
-          </form></p>
                
     </div><!-- Fin Jumbotron -->
 </body>

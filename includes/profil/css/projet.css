@@ -1,0 +1,29 @@
+/*
+    Authors : Gaël
+
+*/
+
+form {
+	max-width: 500px;
+	min-width: 50px;
+}
+.container {
+	max-width: 100%;
+	min-width: 50px;
+	padding-bottom : 10px;	
+}
+
+.footer {
+    text-align : center;
+    border-top: 1px solid #eee;
+}
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+}
+
+.navbar {
+  margin-bottom: 20px;
+}

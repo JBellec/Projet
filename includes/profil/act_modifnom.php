@@ -11,7 +11,7 @@ $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
 
    // Si $pseudo et $pass différents de null
         if(isset($pseudoactuel,$nom)) {
-            echo 'ligne14';
+           
                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                 A MODIFIER avec vos valeurs */
                 $hostname = "localhost";
@@ -35,12 +35,12 @@ $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
                
                 try
                 {
-                    echo'ligne 38';
+                    
                 	 // préparation de la requête
                         $req_prep = $connect->prepare($requete);
                        
                         // Exécution de la requête en passant la position du marqueur et sa variable associée dans un tableau
-                        $req_prep->execute(array(0=>$pseudo));
+                        $req_prep->execute(array(0=>$pseudoactuel));
                        
                         // Récupération du résultat
                         $resultat = $req_prep->fetchColumn();
@@ -64,12 +64,12 @@ $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
                                     
                                         /* Démarre une session si aucune n'est déjà existante et enregistre le pseudo dans la variable de session $_SESSION['login'] qui donne au visiteur la possibilité de se connecter.  */
                                         if (!session_id()) session_start();
-                                        $_SESSION['pseudo'] = $pseudo;
+                                        $_SESSION['pseudoactul'] = $pseudoactuel;
                                        
                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                         $message = 'Votre modification est enregistrée.';
                                         //ou redirection vers une page en cas de succès ex : menu.php
-                                        header("Location: profil.php");
+                                       // header("Location: ../profil.php");
                                         //exit();  
                                 }  
                         }
