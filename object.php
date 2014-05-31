@@ -15,12 +15,12 @@
             if(isset($_SESSION['pseudo'])){
 				include 'includes/object/description.php';
                 
-				if($result['borrowed']==0){ // si l'objet n'est pas emprunté le bouton s'affiche?>
+				if($result['borrowed']==0) { // si l'objet n'est pas emprunté le bouton s'affiche ?>
 					<form method="post" action="includes/admin/act_borrower.php?=id">
 						<input type="submit" value="Borrow" class="btn btn-primary btn-medium" />
-					</form> <?php//si on est connecté on peu emprunter
-				}
-				else{
+					</form> 
+				<?php//si on est connecté on peu emprunter
+				} else {
 					echo "Objet déjà emprunté";
 				}
 			}
