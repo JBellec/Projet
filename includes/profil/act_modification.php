@@ -7,18 +7,20 @@
     header('Content-type: text/html; charset=UTF-8');// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
 
     $message = null;// Initialisation de la variable du message de réponse
-  echo 'ligne 10';
+  
     // Récupération des variables issues du formulaire par la méthode post
-    $pseudo = filter_input(INPUT_POST, 'pseudo');
+
+    $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
+    if(isset($pseudo)) $pseudo = filter_input(INPUT_POST, 'pseudo');
     $pass = filter_input(INPUT_POST, 'password');
     //$email = filter_input(INPUT_POST, 'email');
-    $nom = filter_input(INPUT_POST, 'nom');
-    $prenom = filter_input(INPUT_POST, 'prenom');
+    if(isset($nom)) $nom = filter_input(INPUT_POST, 'nom');
+    if(isset($prenom)) $prenom = filter_input(INPUT_POST, 'prenom');
     $pass_hache = sha1($pass);
-echo 'ligne 18';
+
 if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
   
-echo'ligne 21';
+
     // Teste que les valeurs ne sont pas vides ou composées uniquement d'espaces  
     $pseudo = trim($pseudo) != '' ? $pseudo : null;
     $pass = trim($pass) != '' ? $pass : null;
@@ -26,7 +28,7 @@ echo'ligne 21';
 
     // Si $pseudo et $pass différents de null
         if(isset($pseudo,$pass)) {
-            echo 'ligne 29';
+            
                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                 A MODIFIER avec vos valeurs */
                 $hostname = "localhost";
@@ -43,7 +45,7 @@ echo'ligne 21';
                
                 // Connexion
                include ('mysql.php');
-               echo'ligne46';       
+                      
                
                 // Requête pour compter le nombre d'enregistrements répondant à la clause : champ du pseudo de la table = pseudo posté dans le formulaire
                 $requete = "SELECT count(*) FROM user WHERE pseudo = ?";
@@ -51,7 +53,7 @@ echo'ligne 21';
                 try
                 {
                         
-                        echo'ligne 54';// préparation de la requête
+                        // préparation de la requête
                         $req_prep = $connect->prepare($requete);
                        
                         // Exécution de la requête en passant la position du marqueur et sa variable associée dans un tableau
@@ -63,28 +65,28 @@ echo'ligne 21';
                         if ($resultat == 0)
                         // Résultat du comptage = 0 pour ce pseudo, on peut donc l'enregistrer
                         {
-                          echo 'ligne 66';
+                          
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $modification = "UPDATE user SET pseudo =:nvpseudo, password =:nvpassword,nom =:nvnom, prenom=:nvprenom WHERE pseudo = :pseudo";
-                               echo'ligne 69';
+                                $modification = "UPDATE user SET pseudo =:nvpseudo, password =:nvpassword,nom =:nvnom, prenom=:nvprenom WHERE pseudo = :pseudoactuel";
+                               
                                 // préparation de la modification
                                 $modif_prep = $connect->prepare($modification);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $modif_exec = $modif_prep->execute(array(':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,':pseudo'=>$_SESSION['pseudo']));
-                               echo'ligne 75';
+                                $modif_exec = $modif_prep->execute(array(':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,':pseudoactuel'=>$pseudoactuel));
+                               
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($modif_exec === true)
                                 {
-                                    echo'ligne 79';
+                                    
                                         /* Démarre une session si aucune n'est déjà existante et enregistre le pseudo dans la variable de session $_SESSION['login'] qui donne au visiteur la possibilité de se connecter.  */
                                         if (!session_id()) session_start();
                                         $_SESSION['pseudo'] = $pseudo;
-                                       echo'ligne 83';
+                                       
                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                         $message = 'Votre modification est enregistrée.';
                                         //ou redirection vers une page en cas de succès ex : menu.php
-                                        //header("Location: menu.php");
+                                        header("Location: profil.php");
                                         //exit();  
                                 }  
                         }
