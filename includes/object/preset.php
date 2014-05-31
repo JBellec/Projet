@@ -5,26 +5,42 @@
 	
 	
 
-	switch($resultat)
-		case $resultat['PC']=1:
+	
 	// On affiche chaque entrée une à une
 	while ($resultat = $req->fetch())
-	{
+	{	if($resultat['type']=='PC'){
 ?>
     <p>
-    Type d'objet : <?php echo $resultat['name']; ?><br />
-	Descritpion de l'objet : <?php echo $resultat['description']; ?><br />
+    Object's type : <?php echo $resultat['type']; ?><br />
+	Descritpion : <?php echo $resultat['description']; ?><br />
 	CPU : <?php echo $resultat['cpu']; ?> <br />
-	Frequence du CPU : <?php echo $resultat['frequence']; ?> GHz<br />
+	CPU's frequency : <?php echo $resultat['frequence']; ?> GHz<br />
 	RAM : <?php echo $resultat['ram']; ?> Go<br />
-	Disque dur : <?php echo $resultat['hard_drive']; ?> Go<br />
-	Carte graphique : <?php echo $resultat['gpu']; ?><br />
+	Hard drive : <?php echo $resultat['hard_drive']; ?> Go<br />
+	GPU : <?php echo $resultat['gpu']; ?><br />
    </p>
 
 <?php
+	}
+	if($resultat['type']=='cable ethernet'){
+?>
+	<p>
+    Object's type : <?php echo $resultat['type']; ?><br />
+	Descritpion : <?php echo $resultat['description']; ?><br />
+	cable's lenght : <?php echo $resultat['lenght']; ?> cm<br />
+   </p>
+ <?php 
+	}	
+	if($resultat['type']=='switch'){
+?>
+	<p>
+    Object's type : <?php echo $resultat['type']; ?><br />
+	Descritpion : <?php echo $resultat['description']; ?><br />
+	Number of port : <?php echo $resultat['number_port']; ?><br />
+   </p>
+<?php
+	}
 }
-break;
-
 $req->closeCursor(); // Termine le traitement de la requête
 	
 ?>
