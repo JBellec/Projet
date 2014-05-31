@@ -27,6 +27,7 @@
                     include "includes/admin/all.php";
                     }
               ?>
+            </div>
         </div>
     </div><!-- /container-fluid-->
 <?php include 'includes/footer.php'; ?>
