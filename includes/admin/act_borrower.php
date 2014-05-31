@@ -11,8 +11,7 @@
         echo "L'objet n'est pas emprunté...";
         // On modifie l'état de l'object
          $req = $connect->prepare('UPDATE object SET borrowed = 1 WHERE id = :id');
-         $req->execute(array(
-         'id'=>$_GET['id']));
+         $req->execute(array('id'=>$_GET['id']));
          echo "L'état de l'objet est passé à emprunté...";
          
         // On ajoute une entrée à la table borrow
