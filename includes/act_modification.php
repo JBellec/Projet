@@ -71,7 +71,7 @@ echo'ligne 21';
                                 $modif_prep = $connect->prepare($modification);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $modif_exec = $modif_prep->execute(array(':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,));
+                                $modif_exec = $modif_prep->execute(array($_SESSION['pseudo'], ':nvpseudo'=>$pseudo,':nvpassword'=>$pass_hache = sha1($pass), ':nvnom'=>$nom,':nvprenom'=>$prenom,));
                                echo'ligne 75';
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($modif_exec === true)
