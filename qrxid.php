@@ -1,10 +1,8 @@
 <?php include 'includes/header.php' ?>
+<title>QR-Xid</title>
 <?php include 'includes/navbar.php' ?>
 <?php include 'lib/phpqrcode/qrlib.php';?>
-		<title>QR-Xid</title>
-	</head>
-    
-	<body>
+<div class="container">
 		<h1>Test 1 - Affichage direct</h1>	
 		
 		<?php
@@ -40,7 +38,5 @@
 		<?php
 			QRcode::png('some othertext 1234', 'test3.png');
 		?>
-
-	</boby>
-
+</div>
 <?php include 'includes/footer.php' ?>
