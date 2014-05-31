@@ -1,9 +1,9 @@
-<?php include '../header.php'; ?>
-</head>
-<?php include '../mysql.php';
+<?php include '../header.php'; 
+    include '../mysql.php';
     // On vérifie que l'object n'est pas deja emprunté au cas où
     $req = $connect->prepare('SELECT borrowed FROM object WHERE id = ?');
     $req->execute(array($_GET['id']));
+    echo "$_GET['id']";
     $result=$req->fetch();
     $isborrowed = $result[0];
 	$req->closeCursor();

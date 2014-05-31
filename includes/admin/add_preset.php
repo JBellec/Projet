@@ -36,14 +36,14 @@
 </div> <!-- /table-responsive-->
 
 <h2 class="sub-header">Add a preset</h2>
-<form role="form">
+<form role="form" method="post" action="includes/admin/act_add_preset.php">
     <div class="form-group">
         <label for="presetName">Preset Name</label>
-        <input type="text" class="form-control" id="presetName" placeholder="Enter the preset name">
+        <input type="text" class="form-control" name="name" placeholder="Enter the preset name">
     </div>
     <div class="form-group">
         <label for="description">Descrition</label>
-        <input type="text" class="form-control" id="description" placeholder="Description, Keep it short ;-)">
+        <input type="text" class="form-control" name="description" placeholder="Description, Keep it short ;-)">
     </div>
     <!-- -->
      <table class="table table-striped">
@@ -63,26 +63,56 @@
                 <td>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Check me out
+                            <input type="checkbox" name="lenght">
                         </label>
                     </div>
                 </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="number_port">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="cpu">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="frequence">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="ram">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="hard_drive">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="gpu">
+                        </label>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div class="checkbox">
-        <label>
-        <input type="checkbox"> Check me out
-        </label>
-    </div>
-<button type="submit" class="btn btn-default">Submit</button>
+<button type="submit" class="btn btn-default">Add</button>
 </form>
 
 
