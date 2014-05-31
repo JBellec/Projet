@@ -14,6 +14,10 @@
          
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <?php
+                if(isset($_GET['msg'])) { 
+                    $msg = $_GET['msg'];
+                    include "includes/admin/msg.php";
+                }
                 
                 if(isset($_GET['sec'])) {
                     $section = $_GET['sec'];
