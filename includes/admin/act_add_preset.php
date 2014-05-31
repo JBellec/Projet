@@ -8,7 +8,7 @@
     $exist=$result[0];
     $req->closeCursor();
     if(isset($exist)) {// On vérifie que la cathégorie n'existe pas deja
-       header('Location: ../../admin.php?sec=add_preset&msg=exist');
+       header('Location: ../../admin.php?sec=preset&msg=exist');
     } else { //On ajoute la nouvelle catégorie à l'aide d'une requette préparé
         //préparation des variables
         if(isset($_POST['lenght'])) { $lenght = 1;} else { $lenght = 0; }
@@ -36,6 +36,6 @@
         ));
         $req->closeCursor();
         echo 'Cathégorie bien ajouté';
-        header('Location: ../../admin.php?sec=add_preset&msg=ok');
+        header('Location: ../../admin.php?sec=preset&msg=ok');
     }
 ?>

@@ -16,35 +16,30 @@
 				include 'includes/object/description.php';
                 
 				if($result['borrowed']==0) { // si l'objet n'est pas emprunté le bouton s'affiche ?>
-					<form method="post" action="includes/admin/act_borrower.php?=id">
+					<form method="post" action="includes/admin/act_borrower.php?id=<?php echo $_GET['id'] ?>">
 						<input type="submit" value="Borrow" class="btn btn-primary btn-medium" />
 					</form> 
 				<?php//si on est connecté on peu emprunter
 				} else {
 					echo "Objet déjà emprunté";
 				}
-			}
-            else {  //sinon il est nécessaire de se connecter
+			} else {  //sinon il est nécessaire de se connecter
                 include "include/object/login.php";
             }
         } else {/* On fait un accès direct depuis l'administration par exe */
-        
-            
-                if(isset($_SESSION['pseudo'])){
+            if(isset($_SESSION['pseudo'])){
 					include 'includes/object/description.php';
                    
 				    if($result['borrowed']==0){ // si l'objet n'est pas emprunté le bouton s'affiche?>
-						<form method="post" action="includes/admin/act_borrower.php?id=$_GET['id']">
+						<form method="post" action="includes/admin/act_borrower.php?id=<?php echo $_GET['id'] ?>">
 							<input type="submit" value="Borrow" class="btn btn-primary btn-medium" />
 						</form><?php //si on est connecté on peu emprunter
-					}
-					else{
+					} else{
 						echo "Objet déjà emprunté";
 					}
 					
 					//include 'includes/object/borrow.php';//on affiche de quoi emprunter l'objet
-                }
-                else {
+             } else {
                     echo 'You should login to borrow this item'; // on doit se connecter
                 }
             }    
