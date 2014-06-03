@@ -1,7 +1,7 @@
 <?php
   $modif = $_GET['modif'];
   switch ($modif) {
-      case "nom" :
+      case "name" :
             /* Fichier appelé lors de l'inscription d'une personne */
     echo 'ligne 6';
             header('Content-type: text/html; charset=UTF-8');// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
@@ -9,11 +9,11 @@
             $message = null;// Initialisation de la variable du message de réponse
   
                // Récupération des variables issues du formulaire par la méthode post
-               $nom = filter_input(INPUT_POST, 'nom');
+               $name = filter_input(INPUT_POST, 'name');
                $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
 
                                    // Si $pseudo et $pass différents de null
-                                        if(isset($pseudoactuel,$nom)) {
+                                        if(isset($pseudoactuel,$name)) {
                                            
                                                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                                                 A MODIFIER avec vos valeurs */
@@ -51,16 +51,16 @@
                                                         //if ($resultat == 0)
                                                         // Résultat du comptage = 0 pour ce pseudo, on peut donc l'enregistrer
                                                         //{
-                                                          echo 'ligne 54';
+                                                          
                                                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                                                $modification = "UPDATE user SET nom =:nvnom WHERE pseudo = :pseudoactuel";
+                                                                $modification = "UPDATE user SET name =:nvname WHERE pseudo = :pseudoactuel";
                                                                
                                                                 // préparation de la modification
                                                                 $modif_prep = $connect->prepare($modification);
                                                                
                                                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                                                $modif_exec = $modif_prep->execute(array(':nvnom'=>$nom,':pseudoactuel'=>$pseudoactuel));
-                                                               echo 'ligne 63';
+                                                                $modif_exec = $modif_prep->execute(array(':nvname'=>$name,':pseudoactuel'=>$pseudoactuel));
+                                                               
                                                                 /* Si l'insertion s'est faite correctement...*/
                                                                 if ($modif_exec === true)
                                                                 {
@@ -88,18 +88,18 @@
                                         }
                                         break;
         
-case "prenom":
+case "lastname":
     
     header('Content-type: text/html; charset=UTF-8');
 
     $message = null;
   
     
-                $prenom = filter_input(INPUT_POST, 'prenom');
+                $lastname = filter_input(INPUT_POST, 'lastname');
                 $pseudoactuel = filter_input(INPUT_POST, 'pseudoactuel');
 
                    // Si $pseudo et $pass différents de null
-                        if(isset($pseudoactuel,$prenom)) {
+                        if(isset($pseudoactuel,$lastname)) {
                                 $hostname = "localhost";
                                 $database = "projet";
                                 $username = "root";
@@ -114,9 +114,9 @@ case "prenom":
                                         $resultat = $req_prep->fetchColumn();
                                         //if ($resultat == 0)
                                        // {
-                                           $modification = "UPDATE user SET prenom =:nvprenom WHERE pseudo = :pseudoactuel";
+                                           $modification = "UPDATE user SET lastname =:nvlastname WHERE pseudo = :pseudoactuel";
                                                $modif_prep = $connect->prepare($modification);
-                                               $modif_exec = $modif_prep->execute(array(':nvprenom'=>$prenom,':pseudoactuel'=>$pseudoactuel));
+                                               $modif_exec = $modif_prep->execute(array(':nvlastname'=>$prenom,':pseudoactuel'=>$pseudoactuel));
                                                if ($modif_exec === true)
                                                 { 
                                                         if (!session_id()) session_start();
