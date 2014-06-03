@@ -1,4 +1,5 @@
 <?php include 'includes/header.php' ?>
+<link href="css/qrxid.css" rel="stylesheet">
 <title>QR-Xid</title>
 <?php include 'includes/navbar.php';
     include 'lib/phpqrcode/qrlib.php';
@@ -11,8 +12,8 @@
         <?php 
             while ($fetched = $objects->fetch()){
             echo '<div class="col-xs-4 col-md-2">';
-            echo '<a href="'.$URL.'/object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
-            echo  htmlspecialchars($fetched['name']);
+            echo '<a href="'.$URL.'object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
+            echo  '<p>'.$fetched['name'].'</p>';
             echo '</div>';
             $i =($i+1)%6;
             if($i==12) {
