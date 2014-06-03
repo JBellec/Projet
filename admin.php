@@ -23,7 +23,6 @@
                     $section = $_GET['sec'];
                     include "includes/admin/$section.php";
                 } else {
-                    echo "J'affiche tout !";
                     include "includes/admin/all.php";
                     }
               ?>

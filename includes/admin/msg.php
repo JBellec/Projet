@@ -17,6 +17,18 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             </div><?php
         break;
+        
+        case 'deleted': ?>
+            <div class="alert alert-success alert-dismissable">Good job, the preset was deleted ! 
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            </div><?php
+        break;
+        
+        case 'delerror': ?>
+            <div class="alert alert-danger alert-dismissable">Oups! Something went wrong, the preset don't exist.
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            </div><?php
+        break;
                 
         default:
            
