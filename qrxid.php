@@ -11,7 +11,7 @@
         <?php 
             while ($fetched = $objects->fetch()){
             echo '<div class="col-xs-4 col-md-2">';
-            echo '<img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"  />';
+            echo '<a href="'.$URL.'/object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
             echo  htmlspecialchars($fetched['name']);
             echo '</div>';
             $i =($i+1)%6;
