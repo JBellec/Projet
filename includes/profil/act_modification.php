@@ -2,7 +2,7 @@
 
 
 <?php
-    /* Fichier appelé lors de l'inscription d'une personne */
+    /* Fichier appelé lors de la modification d'une personne */
     
     header('Content-type: text/html; charset=UTF-8');// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
 
