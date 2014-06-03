@@ -16,7 +16,7 @@
         </div><!-- fin colonne 1 -->
         <div class="col-lg-4"> <!-- debut colonne 2 -->
           
-          <h2><u>Informations divers</u></h2>
+          <h2>Informations divers</h2>
 		  </br>
           <p>
 
@@ -34,26 +34,24 @@
                     ?>
                         <p>
 
-                       <ul> 
-                       <li><strong>My last name is : </strong><?php echo $donnees['nom']; ?></li><br />
-                       <li><strong> have a super first name:</strong> <?php echo $donnees['prenom']; ?></li></br>
-                       <li><strong>You can call me : </strong><?php echo $donnees['pseudo'];?></br>
-					   <li><strong>To contact me:</strong> </br>
-					       <ul>
-					       <li>You can send me an e-mail:</strong><?php echo $donnees['email'];?></li></br>
-					       <li>Or phone me at : </strong><?php echo $donnees['tel'];?></li><br/>
-						   </ul>
-					   <li><strong>I live in : </strong><?php echo $donnees['adresse'];?></li><br/>
-					   <li><strong>You can see my beautiful pictures &raquo; <?php echo $donnees ['photos'];?></li></br>
-					   <li><strong>I study :</strong> <?php echo $donnees ['filiere'];?></li>
+                            <ul> 
+                               <li><strong>My last name is : </strong><?php echo $donnees['nom']; ?></li><br />
+                               <li><strong> have a super first name:</strong> <?php echo $donnees['prenom']; ?></li></br>
+                               <li><strong>You can call me : </strong><?php echo $donnees['pseudo'];?></br>
+        					             <li><strong>To contact me:</strong> </br>
+					                  <ul>
+              					       <li>You can send me an e-mail:</strong><?php echo $donnees['email'];?></li></br>
+              					       <li>Or phone me at : </strong><?php echo $donnees['tel'];?></li><br/>
+						                </ul>
+                    					   <li><strong>I live in : </strong><?php echo $donnees['adresse'];?></li><br/>
+                    					   <li><strong>You can see my beautiful pictures &raquo; <?php echo $donnees ['photos'];?></li></br>
+                    					   <li><strong>I study :</strong> <?php echo $donnees ['filiere'];?></li>
 					 
-					   </ul>
+					                  </ul>
 					   
-					   
-                        
                          </p></br>
 						 
-						 <p><a class="btn btn-primary" href="#" role="button">Modification &raquo;</a></p>
+						          <p><a class="btn btn-primary" href="#" role="button">Modification &raquo;</a></p>
                     <?php
                 }
                $req->closeCursor(); // Termine le traitement de la requête
@@ -65,32 +63,32 @@
         </div><!-- fin colonne 2 -->
         <div class="col-lg-4"> <!-- debut colonne 3 -->
           
-          <h2><u>Liens utiles</u></h2>
-		  </br>
-		   <?php 
-             
-             $reponse = $connect->query('SELECT * FROM user');
+          <h2>Liens utiles</h2>
+		      </br>
+              		   <?php 
+                           
+                           $reponse = $connect->query('SELECT * FROM user');
 
-            
-             // On récupère tout le contenu de la table user
-             $req = $connect->prepare('SELECT * FROM user Where pseudo = ?');
-             $req->execute(array($_GET['pseudo']));
-             // On affiche chaque entrée une à une
-             while ($donnees = $req->fetch())
-                {
-                    ?>
-              <p>
-			       <ul> 
-		               <li> My facebook count : <?php echo $donnees['lienf'];?></li> </br>
-                       <li> I have a Twitter count too : <?php echo $donnees['lient']; ?></li><br />
-                       
-					</ul>
-				
-			 <?php
-                }
-               $req->closeCursor(); // Termine le traitement de la requête
-             ?>
-			 </p>
+                          
+                           // On récupère tout le contenu de la table user
+                           $req = $connect->prepare('SELECT * FROM user Where pseudo = ?');
+                           $req->execute(array($_GET['pseudo']));
+                           // On affiche chaque entrée une à une
+                           while ($donnees = $req->fetch())
+                              {
+                     ?>
+                                      <p>
+              			                         <ul> 
+              		                                <li> My facebook count : <?php echo $donnees['lienf'];?></li> </br>
+                                                  <li> I have a Twitter count too : <?php echo $donnees['lient']; ?></li><br />
+                                     
+              					                     </ul>
+              				
+              			 <?php
+                              }
+                             $req->closeCursor(); // Termine le traitement de la requête
+                      ?>
+			                               </p>
 		  
         </div><!-- fin colonne -->
       </div><!-- /.row -->
