@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Mer 04 Juin 2014 à 12:26
--- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.12
+-- Client :  localhost
+-- Généré le :  Mer 04 Juin 2014 à 17:57
+-- Version du serveur :  5.6.16
+-- Version de PHP :  5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `projet`
+-- Base de données :  `projet`
 --
 
 -- --------------------------------------------------------
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `lastname` varchar(255) CHARACTER SET utf8 NOT NULL,
   `pseudo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `admin` tinyint(1) DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8 NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 NOT NULL,
   `phone` int(11) NOT NULL,
@@ -38,18 +39,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   `photos` varchar(255) CHARACTER SET utf8 NOT NULL,
   `network` varchar(255) CHARACTER SET utf8 NOT NULL,
   `promo` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `admin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `lastname`, `pseudo`, `email`, `password`, `phone`, `adress`, `photos`, `network`, `promo`, `admin`) VALUES
-(1, 'Julien', 'Bellec', 'Tumai', 'julien.bellec@hotmail.fr', 'c54b8f087b3dc168910edc07750dfae3ae0387ef', 0, '', '', '', '', 1),
-(2, 'aze', 'aze', 'azeaze', 'jbtumai@gmail.com', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', '', 0);
+INSERT INTO `user` (`id`, `name`, `lastname`, `pseudo`, `admin`, `email`, `password`, `phone`, `adress`, `photos`, `network`, `promo`) VALUES
+(12, 'bellec', 'julien', 'tumai', NULL, 'julien.bellec@hotmail.fr', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', ''),
+(13, 'azer', 'ae', 'qsdfg', NULL, 'example@example.fr', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', ''),
+(14, 'zerty', '', 'dalia', NULL, '', '6f7be09772f2e5d51923d5feaa84508ee8472f4e', 0, '', '', '', ''),
+(15, 'Alberola', 'Gaël', 'zoski', 1, 'zoski@free.fr', '64faf5d0b1dc311fd0f94af64f6c296a03045571', 0, '', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
