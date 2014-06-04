@@ -9,8 +9,8 @@
     $pseudo = filter_input(INPUT_POST, 'pseudo');
     $pass = filter_input(INPUT_POST, 'password');
     $email = filter_input(INPUT_POST, 'email');
-    $nom = filter_input(INPUT_POST, 'nom');
-    $prenom = filter_input(INPUT_POST, 'prenom');
+    $lastname = filter_input(INPUT_POST, 'lastname');
+    $name = filter_input(INPUT_POST, 'name');
 	$pass_hache = sha1($pass);
 
 if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
@@ -58,13 +58,13 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                         // Résultat du comptage = 0 pour ce pseudo, on peut donc l'enregistrer
                         {
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $insertion = "INSERT INTO user(pseudo,password, email, nom, prenom) VALUES(:pseudo, :password, :email, :nom, :prenom)";
+                                $insertion = "INSERT INTO user(pseudo,password, email, lastname, name) VALUES(:pseudo, :password, :email, :lastname, :name)";
                                
                                 // préparation de l'insertion
                                 $insert_prep = $connect->prepare($insertion);
                                
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$pass_hache = sha1($pass), ':email'=>$email, ':nom'=>$nom,':prenom'=>$prenom,));
+                                $inser_exec = $insert_prep->execute(array(':pseudo'=>$pseudo,':password'=>$pass_hache = sha1($pass), ':email'=>$email, ':lastname'=>$lastname,':name'=>$name,));
                                
                                 /* Si l'insertion s'est faite correctement...*/
                                 if ($inser_exec === true)
