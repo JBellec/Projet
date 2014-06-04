@@ -76,7 +76,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                         $message = 'Votre inscription est enregistrée.';
                                         //ou redirection vers une page en cas de succès ex : menu.php
-                                        //header("Location: menu.php");
+                                        header("Location: ../index.php");
                                         //exit();  
                                 }  
                         }
