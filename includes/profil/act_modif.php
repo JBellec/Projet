@@ -72,7 +72,7 @@
                                                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                                                         $message = 'Votre modification est enregistrée.';
                                                                         //ou redirection vers une page en cas de succès ex : menu.php
-                                                                       // header("Location: ../profil.php");
+                                                                       header("Location: ../../profil.php");
                                                                         //exit();  
                                                                 }  
                                                        // }

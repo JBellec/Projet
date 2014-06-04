@@ -50,8 +50,11 @@
 					                  </ul>
 					   
                          </p></br>
-						 
+								<?php if($_SESSION['pseudo']== $_GET['pseudo']){
+								?>
 						          <p><a class="btn btn-primary" href="modif.php" role="button">Modification &raquo;</a></p>
+								<?php }
+								?>
                     <?php
                 }
                $req->closeCursor(); // Termine le traitement de la requête
