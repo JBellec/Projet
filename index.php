@@ -15,7 +15,7 @@
             Indeed, scanning the QRCode of the requested object can add the product, click on OKeeyyy and it's done! : D</p>
             <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div><!-- fin 1er colonne -->
-
+		
         <div class="col-lg-4"><!-- 2em colonne -->
             <h2>Profil Access</h2>
             <p>You met a classmate and you want to take the contact information faster? Or visit his profile and see his photos (chouette)? </br> Scan the QRcode and let you guide!</p>
@@ -23,7 +23,12 @@
         </div><!-- fin 2em colonne -->
 
         <div class="col-lg-4"><!-- 3em colonne -->
-        	<?php include ("includes/connexion.php");?>
+		
+        	<?php
+			if(!isset($_SESSION['pseudo'])){
+			include ("includes/connexion.php");
+			}
+			?>
         </div><!-- fin 3em colonne -->
     </div><!-- fin du vecteur -->       
 </div> <!-- /container -->

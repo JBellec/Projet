@@ -7,9 +7,9 @@
 						    	<?php include ('connexion.php'); ?> <!-- inclure la page de profil perso -->
 						    }else {
 						         if($_SESSION['pseudo']== $_GET['pseudo']){
-						         <?php include ('../../profil.php'); ?> <!-- inclure la page privé -->
+						         <?php include (''); ?> <!-- inclure la page privé -->
 						     }else {
-						     	<?php include ('../../profil.php'); ?> <!-- inclure la page public -->
+						     	<?php include (''); ?> <!-- inclure la page public -->
 						           }
 						  ?>
 <?php include 'includes/footer.php' ?>
