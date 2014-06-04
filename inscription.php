@@ -16,21 +16,21 @@
 						</div>
 		
 						<div class="form-group">
-							<label for="nom">Nom</label>
-							<input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
 						</div>
   
 
 						<div class="form-group">
-						   <label for="prenom">Prenom</label>
-						   <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrez votre prenom">
+						   <label for="lastname">Lastname</label>
+						   <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter your lastname">
 						</div>
   
         
 		
 						<div class="form-group">
 						  <label for="pass">Password</label>
-						  <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+						  <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
 						 </div>
 						 
 						 <div class="form-group">
