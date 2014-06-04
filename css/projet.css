@@ -11,6 +11,7 @@ form {
 	max-width: 100%;
 	min-width: 50px;
 	padding-bottom : 10px;	
+
 }
 
 .footer {
@@ -26,4 +27,7 @@ body {
 
 .navbar {
   margin-bottom: 20px;
+}
+.jumbotron{
+	padding-bottom :325px;
 }
