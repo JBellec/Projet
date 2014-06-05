@@ -6,27 +6,27 @@
 	while ($resultat = $req->fetch()) {	
 	    if($resultat['type']=='PC'){ ?>
             <p>
-            Object's type : <?php echo $resultat['type']; ?><br />
-	        Descritpion : <?php echo $resultat['description']; ?><br />
-	        CPU : <?php echo $resultat['cpu']; ?> <br />
-	        CPU's frequency : <?php echo $resultat['frequence']; ?> GHz<br />
-	        RAM : <?php echo $resultat['ram']; ?> Go<br />
-	        Hard drive : <?php echo $resultat['hard_drive']; ?> Go<br />
-	        GPU : <?php echo $resultat['gpu']; ?><br />
+				<strong>Object's type :</strong> <?php echo $resultat['type']; ?><br />
+				<strong>Descritpion :</strong> <?php echo $resultat['description']; ?><br />
+				<strong>CPU : </strong><?php echo $resultat['cpu']; ?> <br />
+				<strong>CPU's frequency :</strong> <?php echo $resultat['frequence']; ?> GHz<br />
+				<strong>RAM : </strong><?php echo $resultat['ram']; ?> Go<br />
+				<strong> Hard drive :</strong> <?php echo $resultat['hard_drive']; ?> Go<br />
+				<strong>GPU :</strong> <?php echo $resultat['gpu']; ?><br />
            </p>
 <?php   }
 	    if($resultat['type']=='cable ethernet'){ ?>
 	        <p>
-            Object's type : <?php echo $resultat['type']; ?><br />
-	        Descritpion : <?php echo $resultat['description']; ?><br />
-	        cable's lenght : <?php echo $resultat['lenght']; ?> cm<br />
+				<strong>Object's type :</strong> <?php echo $resultat['type']; ?><br />
+				<strong>Descritpion :</strong> <?php echo $resultat['description']; ?><br />
+				<strong>Cable's lenght :</strong> <?php echo $resultat['lenght']; ?> cm<br />
             </p>
 <?php 	}	
 	    if($resultat['type']=='switch'){ ?>
 	        <p>
-            Object's type : <?php echo $resultat['type']; ?><br />
-	        Descritpion : <?php echo $resultat['description']; ?><br />
-	        Number of port : <?php echo $resultat['number_port']; ?><br />
+				<strong>Object's type :</strong> <?php echo $resultat['type']; ?><br />
+				<strong>Descritpion :</strong> <?php echo $resultat['description']; ?><br />
+				<strong>Number of port :</strong> <?php echo $resultat['number_port']; ?><br />
            </p>
 <?php	}
     }

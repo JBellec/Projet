@@ -26,6 +26,13 @@
 			include ("includes/connexion.php");
 			}
 			?>
+			<?php
+			if(isset($_SESSION['pseudo'])){
+			?>
+			<img class="img-circle" src="image/cat.jpg" alt="Generic placeholder image">
+			<?php
+			}
+			?>
         </div><!-- fin 3em colonne -->
     </div><!-- fin du vecteur -->       
 </div> <!-- /container -->
