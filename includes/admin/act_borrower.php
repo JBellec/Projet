@@ -22,7 +22,7 @@
         'pseudo' => $_SESSION['pseudo']
         ));
         echo "L'utilisateur à emprunter l'objet";
-        header('location: ../../qrxid.php');
+        header('location: ../../object.php?id='.$_GET['id']);
     } else { //Ya eu un emprunt l'instant d'avant
         header('location: ../../index.php');
     }

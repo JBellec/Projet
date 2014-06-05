@@ -33,10 +33,10 @@
 					   
 						if($result['borrowed']==0){ // si l'objet n'est pas emprunté le bouton s'affiche?>
 							<form method="post" action="includes/admin/act_borrower.php?id=<?php echo $_GET['id'] ?>">
-								<input type="submit" value="Borrow" class="btn btn-primary btn-medium" />
+								<input type="submit" value="Borrow" class="btn btn-info btn-lg" />
 							</form><?php //si on est connecté on peu emprunter
 						} else{
-							echo "<strong>Objet déjà emprunté</strong>";
+						    include 'includes/object/status.php';
 						}
 						
 						//include 'includes/object/borrow.php';//on affiche de quoi emprunter l'objet
