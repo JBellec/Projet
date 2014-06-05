@@ -10,8 +10,11 @@
         if($fetched['borrowed']==0) {
             echo ' <span class="label label-success">available</span>';
         } else {
-
-            echo ' <span class="label label-warning">borrowed</span>';
+            $user = $connect->prepare('SELECT pseudo FROM borrowed WHERE object_id=?');
+            $user->execute(array($fetched['id']));
+            $fetched_user=$user->fetch();
+            $the_user=$fetched_user[0];
+            echo ' <span class="label label-warning">'.$the_user.'</span>';
         }
         echo '</div>';
 }?>
