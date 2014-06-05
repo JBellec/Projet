@@ -31,3 +31,8 @@ body {
 .jumbotron{
 	padding-bottom :325px;
 }
+
+h4 {
+    display: inline;
+    
+}
