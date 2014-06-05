@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 04 Juin 2014 à 12:26
+-- Généré le: Jeu 05 Juin 2014 à 08:10
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
+  `admin` tinyint(1) DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `lastname` varchar(255) CHARACTER SET utf8 NOT NULL,
   `pseudo` varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -38,18 +39,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `photos` varchar(255) CHARACTER SET utf8 NOT NULL,
   `network` varchar(255) CHARACTER SET utf8 NOT NULL,
   `promo` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `admin` tinyint(1) NOT NULL,
+  `lienf` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `lient` varchar(255) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `lastname`, `pseudo`, `email`, `password`, `phone`, `adress`, `photos`, `network`, `promo`, `admin`) VALUES
-(1, 'Julien', 'Bellec', 'Tumai', 'julien.bellec@hotmail.fr', 'c54b8f087b3dc168910edc07750dfae3ae0387ef', 0, '', '', '', '', 1),
-(2, 'aze', 'aze', 'azeaze', 'jbtumai@gmail.com', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', '', 0);
+INSERT INTO `user` (`id`, `admin`, `name`, `lastname`, `pseudo`, `email`, `password`, `phone`, `adress`, `photos`, `network`, `promo`, `lienf`, `lient`) VALUES
+(12, NULL, 'bellec', 'julien', 'tumai', 'julien.bellec@hotmail.fr', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', '', '', ''),
+(13, NULL, 'azer', 'ae', 'qsdfg', 'example@example.fr', 'de271790913ea81742b7d31a70d85f50a3d3e5ae', 0, '', '', '', '', '', ''),
+(14, NULL, 'zerty', '', 'dalia', '', '6f7be09772f2e5d51923d5feaa84508ee8472f4e', 0, '', '', '', '', '', ''),
+(15, NULL, 'Dalia', 'BEN MECHEDAL', 'dadie', 'dalia33@hotmail.fr', '89df19516b4b70c9de34cce9f6c9ea0660d14633', 0, '', '', '', '', '<a href="https://www.facebook.com/dadie.dalouche?ref=tn_tnmn" > ..lien.. </a>', '<a href="https://twitter.com/DadieDalouche">..lien..</a>');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
