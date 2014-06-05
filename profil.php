@@ -92,6 +92,10 @@
                              $req->closeCursor(); // Termine le traitement de la requête
                       ?>
 			                               </p>
+                 <!-- <div class="img_QRcode">
+                    <p> <?php echo '<img src=“qr/generate.php?txt='.$URL.'/profil.php?pseudo=<?php echo $_SESSION['pseudo'];?>'?></p>
+                  </div>-->
+                  
 		  
         </div><!-- fin colonne -->
       </div><!-- /.row -->
