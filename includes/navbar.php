@@ -33,7 +33,7 @@
 							if(!isset($_SESSION['pseudo'])){
 								include ("navbar_connect.php");
 							}						
-						?>         
+						?> 
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
