@@ -24,7 +24,7 @@
 						<?php	
 							if(isset($_SESSION['pseudo'])){
 						?>		
-								<li><a href="profil.php"><i class="fa fa-child"></i> <?php echo $_SESSION['pseudo'];?> </a></li>
+								<li><a href="profil.php?pseudo=<?php echo $_SESSION['pseudo'];?>"><i class="fa fa-child"></i> <?php echo $_SESSION['pseudo'];?> </a></li>
 								<li><a href="logout.php"><i class="fa fa-unlock"></i> Logout</a></li>
 						<?php
 						}
