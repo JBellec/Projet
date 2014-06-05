@@ -26,7 +26,7 @@
         echo  '<div class="row">';
             }
         }
-        ?>
+        $objects->closeCursor();?>
     </div>
 	
 </div>

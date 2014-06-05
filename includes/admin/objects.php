@@ -2,6 +2,7 @@
 <?php include 'lib/phpqrcode/qrlib.php';
     include 'includes/mysql.php';
     $objects_out = $connect->query('SELECT * FROM object');
+    
     $i=0;
     while ($fetched = $objects_out->fetch()){
         echo '<div class="col-xs-4 col-md-2">';
@@ -15,7 +16,9 @@
             $fetched_user=$user->fetch();
             $the_user=$fetched_user[0];
             echo ' <span class="label label-warning">'.$the_user.'</span>';
+            $user->closeCursor();
         }
         echo '</div>';
-}?>
+}
+$objects_out->closeCursor();?>
 
