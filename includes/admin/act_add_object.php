@@ -25,7 +25,7 @@ if (isset($name,$description)) {
                 {
                   
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $insertion = "INSERT INTO object(name,type, decription,  lenght, number_port, cpu, frequence, ram, hard_drive, gpu) VALUES(:name, :type, :description, :lenght, :number_port, :cpu, :frequence, :ram, :hard_drive, :gpu)";
+                                $insertion = "INSERT INTO object(name,type, description,  lenght, number_port, cpu, frequence, ram, hard_drive, gpu) VALUES(:name, :type, :description, :lenght, :number_port, :cpu, :frequence, :ram, :hard_drive, :gpu)";
                                
                                 // préparation de l'insertion
                                 $insert_prep = $connect->prepare($insertion);
