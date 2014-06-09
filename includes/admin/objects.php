@@ -6,6 +6,7 @@
     $i=0;
     while ($fetched = $objects_out->fetch()){
         echo '<div class="col-xs-4 col-md-2">';
+        
         echo '<a href="'.$URL.'object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
         echo  '<h4>'.$fetched['name'].'</h4>';
         if($fetched['borrowed']==0) {
