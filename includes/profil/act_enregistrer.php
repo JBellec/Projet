@@ -23,7 +23,7 @@ if(isset($_POST['description']))
 		//2. substr(chaine,1) ignore le premier caractère de chaine.
 		//3. strtolower met l'extension en minuscules.
 	$extension_upload = strtolower(  substr(  strrchr($_FILES['photos']['name'], '.')  ,1)  );
-	$nom = "img/{$nom_img}.{$extension_upload}";
+	$nom = "image/nomphoto.{$extension_upload}";
 	$resultat = move_uploaded_file($_FILES['photos']['tmp_name'],$nom);
 	if ($resultat)
 	{
