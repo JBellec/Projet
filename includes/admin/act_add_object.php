@@ -26,10 +26,10 @@ if (isset($name,$description)) {
                   
                                 // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
                                 $insertion = "INSERT INTO object(name,type, description,  lenght, number_port, cpu, frequence, ram, hard_drive, gpu) VALUES(:name, :type, :description, :lenght, :number_port, :cpu, :frequence, :ram, :hard_drive, :gpu)";
-                               
+                               echo 'ligne 29';
                                 // préparation de l'insertion
                                 $insert_prep = $connect->prepare($insertion);
-                               
+                               echo 'ligne 32';
                                 // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
                                 $inser_exec = $insert_prep->execute(array(':name'=>$name, ':type'=>$type,':description'=>$description, ':lenght'=>$lenght, ':number_port'=>$number_port, ':cpu'=>$cpu,':frequence'=>$frequence, ':ram'=>$ram, ':hard_drive'=>$hard_drive, ':gpu'=>$gpu));
                                echo 'ligne 34';
@@ -41,7 +41,7 @@ if (isset($name,$description)) {
                                         // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
                                         $message = 'Object added.';
                                         //ou redirection vers une page en cas de succès ex : menu.php
-                                        header("Location: ../object.php");
+                                        //header("Location: ../object.php");
                                         //exit();  
                                  
 								}

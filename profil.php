@@ -93,7 +93,7 @@
                       ?>
 			                               </p>
                  <!-- <div class="img_QRcode">
-                    <p> <?php echo '<img src=“qr/generate.php?txt='.$URL.'/profil.php?pseudo=<?php echo $_SESSION['pseudo'];?>'?></p>
+                    <p> <?php echo '<img src=“qr/generate.php?txt='.$URL.'/profil.php?pseudo=<?php echo $_SESSION[\'pseudo\'];?>'?></p>
                   </div>-->
                   
 		  
