@@ -4,3 +4,4 @@ js/
 *.~
 lib/
 includes/mysql.php
+includes/profil/img/*
