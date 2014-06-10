@@ -12,7 +12,7 @@
         <?php 
             while ($fetched = $objects->fetch()){
             echo '<div class="col-xs-4 col-md-2">';
-            echo '<a href="'.$URL.'object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'/object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
+            echo '<a href="'.$URL.'object.php?id='.$fetched['id'].'"><img src="qr/generate.php?txt='.$URL.'object.php?id='.$fetched['id'].'" class="img-responsive"/></a>';
             echo  '<p>'.$fetched['name'].'</p>';
             if($fetched['borrowed']==0) {
                 echo '<p><span class="label label-success">available</span></p>';
