@@ -29,7 +29,9 @@
 			<?php
 			if(isset($_SESSION['pseudo'])){
 			?>
-			<img class="img-circle" src="image/cat.jpg" alt="Generic placeholder image">
+			<p><h2>You are connected !!</h2>
+			<img class="img-circle" src="image/minion.jpg" alt="Generic placeholder image">
+			</p>
 			<?php
 			}
 			?>

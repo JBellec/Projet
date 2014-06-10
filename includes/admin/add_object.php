@@ -12,7 +12,7 @@
 		<?php 
 			if(isset($_GET['qr'])) { /* Pour un accès par qr Code */
 				if(isset($_SESSION['pseudo'])){
-					if($_GET['preset']==PC){
+					if($_GET['preset']=='PC'){
 						//$req2 = $connect->prepare('SELECT * from preset WHERE name= ?');
 						//$req2->execute(array($_GET['preset']));
 
@@ -40,46 +40,63 @@
 							if($_GET['preset']=='PC'){
 
 					?>
-							<p class="lead">
-								<form method="post" action="includes/admin/act_add_object.php">
+						<p class="lead">
+							<form method="post" action="includes/admin/act_add_object.php">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label>Name</label>
-										<input type="text" name ="name">
+										<label for="email">Name</label>
+										<input type="text" class="form-control"  name="name" id ="name" >
 									</div>
 									
 									<div class="form-group">
-										<label>Type</label>
-										<input type="text" name ="type">
+										<label for="pseudo">Description</label>
+										<input type="text" class="form-control" name="description"  id="description" >
+									</div>
+
+									<div class="form-group">
+										<label for="pseudo">Type</label>
+										<input type="text" class="form-control" name="type"  id="type" >
 									</div>
 									<div class="form-group">
-										<label>Description</label>
-										<input type="text" name ="description">
+										<label for="lastname">CPU</label>
+										<input type="text" class="form-control" name="cpu" id="cpu">
 									</div>
+									
+								</div>
+								<div class="col-md-4">
+								</div>
+								
+								<div class="col-md-6">
+
 									<div class="form-group">
-										<label>CPU</label>
-										<input type="text" name="cpu">
+										<label for="pass">Frequency</label>
+										<input type="text" class="form-control" name="frequence" id="frequence">
 									</div>
+								 
 									<div class="form-group">
-										<label>Frequency</label>
-										<input type="text" name="frequence">
+										<label for="pass">RAM</label>
+										<input type="text" class="form-control" name="ram" id="ram">
 									</div>
+									
 									<div class="form-group">
-										<label>RAM</label>
-										<input type="text" name="ram">
+										<label for="pass">Hard drive</label>
+										<input type="text" class="form-control" name="hard_drive" id="hard_drive">
 									</div>
+									
 									<div class="form-group">
-										<label>Hard drive</label>
-										<input type="text" name="hard_drive">
+										<label for="pass">GPU</label>
+										<input type="text" class="form-control" name="gpu" id="gpu">
 									</div>
-									<div class="form-group">
-										<label>GPU</label>
-										<input type="text" name="gpu">
-									</div>
-									<div class="form-group">
-										<input type="submit" value="Add">
-									</div>
-								</form>
-							</p>
+								</div>
+								
+								
+								<div class="col-md-1">
+									<input type="submit" class="btn btn-success"></input>
+								</div>
+								
+
+							</form>
+						</p>
 		<?php
 						}
 
@@ -89,8 +106,90 @@
 				  else {
 						echo 'You should login to borrow this item'; // on doit se connecter
 					}
-				}    
+				} 
+
+				if(isset($_SESSION['pseudo'])){
+							if($_GET['preset']=='cable_ethernet'){
+
+					?>
+						<p class="lead">
+							<form method="post" action="includes/admin/act_add_object.php">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Name</label>
+										<input type="text" class="form-control"  name="name" id ="name" >
+									</div>
+									
+									<div class="form-group">
+										<label for="pseudo">Description</label>
+										<input type="text" class="form-control" name="description"  id="description" >
+									</div>
+
+									<div class="form-group">
+										<label for="pseudo">Type</label>
+										<input type="text" class="form-control" name="type"  id="type" >
+									</div>
+									
+									<input type="submit" class="btn btn-success"></input>
+								
+							</form>
+						</p>
+		<?php
+						}
+
+					}
+						
+
+				  else {
+						echo 'You should login to borrow this item'; // on doit se connecter
+					}
+								
 		?> 
+		<?php
+						if(isset($_SESSION['pseudo'])){
+							if($_GET['preset']=='switch'){
+
+		?>
+						<p class="lead">
+							<form method="post" action="includes/admin/act_add_object.php">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Name</label>
+										<input type="text" class="form-control"  name="name" id ="name" >
+									</div>
+									
+									<div class="form-group">
+										<label for="pseudo">Description</label>
+										<input type="text" class="form-control" name="description"  id="description" >
+									</div>
+
+									<div class="form-group">
+										<label for="pseudo">Type</label>
+										<input type="text" class="form-control" name="type"  id="type" >
+									</div>
+									
+									<div class="form-group">
+										<label for="pseudo">Number of port</label>
+										<input type="text" class="form-control" name="number_port"  id="number_port" >
+									</div>
+									
+									<input type="submit" class="btn btn-success"></input>
+									
+								</div>
+								
+
+							</form>
+						</p>
+						<?php
+						}
+
+					}
+						
+
+				  else {
+						echo 'You should login to borrow this item'; // on doit se connecter
+					}
+					?>
 		
 </div> <!-- /container -->
 
