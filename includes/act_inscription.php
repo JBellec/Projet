@@ -26,9 +26,9 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
                 /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
                 A MODIFIER avec vos valeurs */
                 $hostname = "localhost";
-                $database = "projet";
-                $username = "root";
-                $password = "";
+                $database = "qr";
+                $username = "qr";
+                $password = "t67TvNSzC5XGcV7a";
 
                // Configuration des options de connexion
                 /* Désactive l'éumlateur de requêtes préparées (hautement recommandé)
