@@ -4,4 +4,8 @@ js/
 *.~
 lib/
 includes/mysql.php
+<<<<<<< HEAD
 includes/mysql.php
+=======
+includes/profil/img/*
+>>>>>>> origin/master
