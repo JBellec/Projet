@@ -23,19 +23,7 @@ if (isset($pseudo,$pass)) {// Si le formulaire est envoyé
 
     // Si $pseudo et $pass différents de null
         if(isset($pseudo,$pass)) {
-                /* Connexion au serveur : dans cet exemple, en local sur le serveur d'évaluation
-                A MODIFIER avec vos valeurs */
-                $hostname = "localhost";
-                $database = "qr";
-                $username = "qr";
-                $password = "t67TvNSzC5XGcV7a";
-
-               // Configuration des options de connexion
-                /* Désactive l'éumlateur de requêtes préparées (hautement recommandé)
-                $pdo_options[PDO::ATTR_EMULATE_PREPARES] = false;
-               
-                //      Active le mode exception
-                $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;*/
+  
                
                 // Connexion
                include ('mysql.php');        
