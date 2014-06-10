@@ -3,3 +3,4 @@ fonts/
 js/
 *.~
 lib/
+includes/mysql.php
