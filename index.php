@@ -30,7 +30,7 @@
 			if(isset($_SESSION['pseudo'])){
 			?>
 			<p><h2>You are connected !!</h2>
-			<img class="img-circle" src="image/minion.jpg" alt="Generic placeholder image">
+			<img class="img-responsive" src="image/minion.jpg" alt="Une image d'un Minion">
 			</p>
 			<?php
 			}
