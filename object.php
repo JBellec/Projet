@@ -10,7 +10,7 @@
 <title>Object - <?php echo $object_name?></title>
 <?php include 'includes/navbar.php'; ?>
 <div class="container">
-	<div class="jumbotron">
+	<div class="col-md-6">
 		<?php 
 			if(isset($_GET['qr'])) { /* Pour un accès par qr Code */
 				if(isset($_SESSION['pseudo'])){
@@ -45,6 +45,10 @@
 					}
 				}    
 		?> 
-	</div>		
+	</div>
+	
+	<div class="col-md-6">
+	    <?php echo '<a href="'.$URL.'object.php?id='.$_GET['id'].'"><img src="qr/generate.php?txt='.$URL.'object.php?id='.$_GET['id'].'" class="img-responsive"/></a>'; ?>
+	</div>	
 </div> <!-- /container -->
     <?php include 'includes/footer.php'; ?>

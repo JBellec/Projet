@@ -3,11 +3,12 @@
  include 'includes/navbar.php';
   include 'includes/mysql.php'; ?>
 
+
 	
       <div class="container">    <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4"> <!--debut colonne 1 -->
-          <img class="img-circle" src="image/img.png" alt="Generic placeholder image">
+          <img class="img-circle" src="includes/profil/<?php echo $donnees['image']; ?>" alt="Generic placeholder image">
           <h2>Meeee ^_^</h2>
           <p>
 

@@ -6,4 +6,3 @@
 	    die('Erreur : ' . $e->getMessage());
     }
 ?>
-
