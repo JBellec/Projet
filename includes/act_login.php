@@ -15,6 +15,7 @@
     
 	if (!$resultat)	{
 		echo 'Mauvais identifiant ou mot de passe !';
+		header('Location: ../index.php'); 
 		$req->closeCursor();
 	} else {
 		$_SESSION['id'] = $resultat['id'];
