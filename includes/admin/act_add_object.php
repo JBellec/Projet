@@ -1,59 +1,25 @@
-<?php
-    /* Fichier appelé lors de l'inscription d'une personne */
-    
-    header('Content-type: text/html; charset=UTF-8');// Indique le bon format des entêtes (par défaut apache risque de les envoyer au standard ISO-8859-1)
-
-    $message = null;// Initialisation de la variable du message de réponse
-
-    // Récupération des variables issues du formulaire par la méthode post
-    $name = filter_input(INPUT_POST, 'name');
-	$type = filter_input(INPUT_POST, 'type');
-    $description = filter_input(INPUT_POST, 'description');
-    $cpu = filter_input(INPUT_POST, 'cpu');
-    $frequence = filter_input(INPUT_POST, 'frequence');
-    $ram = filter_input(INPUT_POST, 'ram');
-	$hard_drive = filter_input(INPUT_POST, 'hard_drive');
-	$gpu = filter_input(INPUT_POST, 'gpu');
-	$lenght = filter_input(INPUT_POST, 'lenght');
-	$number_port = filter_input(INPUT_POST, 'number_port');
-
-	
-if (isset($name,$description)) {
-	include ('../mysql.php');
-  
-                try
-                {
-                  
-                                // Pour enregistrer la date actuelle (date/heure/minutes/secondes) on peut utiliser directement la fonction mysql : NOW()
-                                $insertion = "INSERT INTO object(name,type, description,  lenght, number_port, cpu, frequence, ram, hard_drive, gpu) VALUES(:name, :type, :description, :lenght, :number_port, :cpu, :frequence, :ram, :hard_drive, :gpu)";
-
-                                // préparation de l'insertion
-                                $insert_prep = $connect->prepare($insertion);
-                              
-                                // Exécution de la requête en passant les marqueurs et leur variables associées dans un tableau
-                                $inser_exec = $insert_prep->execute(array(':name'=>$name, ':type'=>$type,':description'=>$description, ':lenght'=>$lenght, ':number_port'=>$number_port, ':cpu'=>$cpu,':frequence'=>$frequence, ':ram'=>$ram, ':hard_drive'=>$hard_drive, ':gpu'=>$gpu));
-                               
-                                /* Si l'insertion s'est faite correctement...*/
-                                if ($inser_exec == true)
-                                {
-										
-                                       
-                                        // A MODIFIER Remplacer le '#' par l'adresse de votre page de destination, sinon ce lien indique la page actuelle.
-                                        $message = 'Object added.';
-                                        //ou redirection vers une page en cas de succès ex : menu.php
-                                        header("Location: ../../admin.php?sec=add_object&preset=PC");
-                                        //exit();  
-                                 
-								}
-                }
-                catch (PDOException $e)
-                {
-                        $message = 'Problème dans la requête d\'insertion';
-                }      
-        }
-        else
-        {    // Au moins un des deux champs "pseudo" ou "mot de passe" n'a pas été rempli
-                $message = 'Les champs Name et Description doivent être remplis.';
-        }
-
+<?php /* Fichier appelé lors de l'ajout d'un objet */ 
+    include '../mysql.php';
+    try {
+    $req = $connect->prepare('INSERT INTO object(id, name, description, type, borrowed, lenght, number_port, cpu, frequence, ram, hard_drive, gpu) VALUES(:id, :name, :description, :type, :borrowed, :lenght, :number_port, :cpu, :frequence, :ram, :hard_drive, :gpu)');
+    $req->execute(
+    array('id' => '',
+           'name' => $_POST['name'],
+           'description' => $_POST['description'],
+           'type' => $_POST['type'],
+           'borrowed' => '0',
+           'lenght' => $_POST['lenght'],
+           'number_port' => $_POST['number_port'],
+           'cpu' => $_POST['cpu'],
+           'frequence' => $_POST['frequence'],
+           'ram' => $_POST['ram'],
+           'hard_drive' => $_POST['hard_drive'],
+           'gpu' => $_POST['gpu']));
+    $req->closeCursor();
+    echo "requette bien executé";
+    } catch(Exception $e) {
+        die('Erreur : '.$e->getMessage());
+    }
+    echo  $_POST['name']; echo $_POST['description']; echo $_POST['type']; echo $_POST['lenght']; echo $_POST['number_port']; echo $_POST['cpu']; echo $_POST['frequence']; echo $_POST['ram']; echo $_POST['hard_drive']; echo $_POST['gpu'];
+    header('Location: ../../admin.php?sec=add_object&msg=addobject');    
 ?>

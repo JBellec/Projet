@@ -6,7 +6,7 @@
         }
         
         $req->closeCursor();
-        echo '<h2 class="sub-header">Add an '.$_GET['preset'].'</h2>';
+        echo '<h2 class="sub-header">Add a '.$_GET['preset'].'</h2>';
         $form=$connect->prepare('SELECT * FROM preset WHERE name=:preset_name');
         $form->execute(array(':preset_name'=>$_GET['preset'])); ?>
         
@@ -23,38 +23,54 @@
                 <label for="cpu">Object CPU</label>
                 <input type="text" class="form-control" name="cpu" placeholder="Enter the cpu reference">
             <?php
+            } else {
+                echo '<input type="hidden" name="cpu" value="">';
             }
             if($fetch_all['frequence']==1){?>
                 <label for="frequence">CPU Frequence</label>
                 <input type="text" class="form-control" name="frequence" placeholder="Enter the cpu frequence">
             <?php
+            } else {
+                echo '<input type="hidden" name="frequence" value="">';
             }
             if($fetch_all['gpu']==1){?>
                 <label for="gpu">GPU Reference</label>
                 <input type="text" class="form-control" name="gpu" placeholder="Enter the GPU references">
             <?php
+            } else {
+                echo '<input type="hidden" name="gpu" value="">';
             }
             if($fetch_all['hard_drive']==1){?>
                 <label for="hard_drive">HDD capacity in Go</label>
                 <input type="int" class="form-control" name="hard_drive" placeholder="Enter the hard drive capacity in Go">
             <?php
+            } else {
+                echo '<input type="hidden" name="hard_drive" value="">';
             }
             if($fetch_all['lenght']==1){?>
                 <label for="lenght">Lenght in meter</label>
                 <input type="int" class="form-control" name="lenght" placeholder="Lenght of the cable">
             <?php
+            } else {
+                echo '<input type="hidden" name="lenght" value="">';
             }
             if($fetch_all['number_port']==1){?>
                 <label for="lenght">Number of port</label>
                 <input type="int" class="form-control" name="number_port" placeholder="Number of port">
             <?php
+            } else {
+                echo '<input type="hidden" name="number_port" value="">';
             }
             if($fetch_all['ram']==1){?>
                 <label for="ram">Quantity of RAM in Go</label>
                 <input type="int" class="form-control" name="ram" placeholder="Quantity of ram">
             <?php
+            } else {
+                echo '<input type="hidden" name="ram" value="">';
             }
             ?>  </div>
+            
+                <?php echo '<input type="hidden" name="type" value="'.$_GET['preset'].'">' ?>
                 <button type="submit" class="btn btn-primary">Add object</button>       
             </form>
        <?php

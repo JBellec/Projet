@@ -47,6 +47,12 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             </div><?php
         break;
+        
+        case 'addobject': ?>
+            <div class="alert alert-success alert-dismissable">Yeah! The new object is now in the data base ;-)
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            </div><?php
+        break;
                 
         default:
            
